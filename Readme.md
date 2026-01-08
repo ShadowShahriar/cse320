@@ -4,4 +4,4 @@
 
 ## Experiment Sheets
 
--   [**📌 Experiment 1**](materials/sheet-01.pdf): Network Cabling | Making connections with Cat5
+-   [**📌 Experiment 1**](materials/sheet-01.pdf): Network Cabling &#124; Making connections with Cat5
