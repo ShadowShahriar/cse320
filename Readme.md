@@ -2,6 +2,18 @@
 
 -   [**📌 Course Outline: Theory**](materials/course-outline-theory.pdf)
 
+## Course Information
+
+```
+Course Code   : CSE 319-320
+Course Title  : Computer Networks
+Course Credit : 3 (Theory), 1.5 (Lab)
+```
+
+Course offered by,
+
+[**Dr. Khandoker Nadim Parvez**](https://www.bubt.edu.bd/department/27/faculty/profile/821)<br>Associate Professor<br>Department of Computer Science and Engineering<br>**nadimparvez@gmail.com**<br>+880 173 2345 087<br>No counseling hours mentioned
+
 ## Course Material
 
 -   [**Chapter 1**](materials/chapter-01.pptx)
