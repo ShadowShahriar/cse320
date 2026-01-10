@@ -14,7 +14,7 @@ Course offered by,
 
 [**Dr. Khandoker Nadim Parvez**](https://www.bubt.edu.bd/department/27/faculty/profile/821)<br>Associate Professor<br>Department of Computer Science and Engineering<br>**nadimparvez@gmail.com**<br>+880 173 2345 087<br>No counseling hours mentioned
 
-## Course Material
+## Course Materials
 
 -   [**Chapter 1**](materials/chapter-01.pptx)
     -   [**Reference Model**](materials/chapter-01-reference-model.pptx)
@@ -22,4 +22,5 @@ Course offered by,
 
 ## Experiment Sheets
 
+-   [**📘 Complete lab manual from SMI University**](materials/manual.pdf)
 -   [**📌 Experiment 1**](materials/sheet-01.pdf): Network Cabling &#124; Making connections with Cat5
