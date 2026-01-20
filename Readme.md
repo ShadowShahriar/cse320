@@ -32,3 +32,8 @@ Course offered by,
 
 - [**📘 Complete lab manual from SMI University**](materials/manual.pdf)
 - [**📌 Experiment 1**](materials/sheet-01.pdf): Network Cabling &#124; Making connections with Cat5
+
+## Video Resources
+
+- [**📌 How to Crimp Cat5/Cat6 Network Patch Cables (RJ45 plugs)**](https://www.youtube.com/watch?v=QMpWkkqX1eM)
+- [**📌 How to Wire Up Ethernet Plugs the EASY WAY! (Cat5e/Cat6 RJ45 Pass Through Connectors)**](https://www.youtube.com/watch?v=NWhoJp8UQpo)
