@@ -23,6 +23,10 @@ Course offered by,
 ## Class Notes
 
 - [**Class 01**](https://shadowshahriar.github.io/cse320/notes/class-01.pdf): 06 January 2026
+- [**Class 02**](https://shadowshahriar.github.io/cse320/notes/class-02.pdf): 08 January 2026
+- [**Class 03**](https://shadowshahriar.github.io/cse320/notes/class-03.pdf): 13 January 2026
+- **Class 04**: 15 January 2026
+- [**Class 05**](https://shadowshahriar.github.io/cse320/notes/class-05.pdf): 20 January 2026
 
 ## Experiment Sheets
 
