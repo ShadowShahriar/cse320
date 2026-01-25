@@ -29,6 +29,13 @@ Course offered by,
 - [**Class 05**](https://shadowshahriar.github.io/cse320/notes/class-05.pdf): 20 January 2026
 - **Class 06**: 22 January 2026 (❌ Class cancelled)
 
+## Lab Reports
+
+- [**Lab 01**](#lab-reports): 05 January (❌ Class cancelled)
+- [**Lab 02**](#lab-reports): 12 January
+- [**Lab 03**](https://shadowshahriar.github.io/cse320/lab/2026-01-19/report.pdf): 19 January &#124; [**Docs**](https://docs.google.com/document/d/1wIlz3SOmLPQLJePKMyZetdjf5tpwhlyx6jbeGpcRfvs/edit?usp=sharing)
+- [**Lab 04**](#lab-reports): 26 January
+
 ## Experiment Sheets
 
 - [**📘 Complete lab manual from SMI University**](materials/manual.pdf)
