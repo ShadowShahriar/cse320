@@ -28,6 +28,7 @@ Course offered by,
 - [**Class 04**](https://shadowshahriar.github.io/cse320/notes/class-04.pdf): 15 January 2026 (Contributed by [**Amrin Jahan**](https://github.com/tushin07))
 - [**Class 05**](https://shadowshahriar.github.io/cse320/notes/class-05.pdf): 20 January 2026
 - **Class 06**: 22 January 2026 (❌ Class cancelled)
+- [**Class 07**](https://shadowshahriar.github.io/cse320/notes/class-05.pdf): 27 January 2026
 
 ## Lab Reports
 
