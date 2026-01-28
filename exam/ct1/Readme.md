@@ -26,3 +26,41 @@ A video conferencing application works smoothly at night but suffers noticeable 
     <ins><strong>Processing Delay:</strong></ins> Under heavy traffic, routers process more packets, slightly increasing this delay.
 
     <ins><strong>Transmission Delay:</strong></ins> During congestion, effective available bandwidth per user drops, increasing transmission time. This can worsen real-time video performance during peak hours.
+
+## Scenario 2
+
+A package of **1,500 bytes** in size is sent over a link with a transmission rate of **10 Mbps** and a propagation delay of **20 ms**.
+
+1.  **Calculate the transmission delay.**
+
+    **Ans.:** Calculating the tranmission delay according to the said scenario:
+
+    We know,
+
+        1 byte = 8 bits
+        Therefore, 1500 bytes = 12000 bits (packet size)
+
+    We have,
+    Transmission Rate,
+
+        R = 10 Mbps = 10 × 10^6 bits/second
+
+    We know,
+    Transmission Delay,
+
+        Td = Packet size / R
+           = 12000 / (10 × 10^6)
+           = 0.0012 s
+           = 1.2 ms
+
+2.  **Explain why transmission delay and propagation delay are independent of each other.**
+
+    **Ans.:** Transmission delay and propagation delay depend on _different physical factors_, so changing one does not affect the other.
+
+    Transmission delay (**Td**) occurs while bits are being put onto the link. So, it depends on **packet size** and **transmission rate**. Formula:
+
+        Td = L / R
+           Where, L = Packet size
+                  R = Transmission Rate
+
+    Propagation Delay (**pD**) occurs while bits are traveling through the link. It depends on **physical distance of the link** and **speed of signal in the medium**. So changing packet size or bandwidth will **NOT** affect propagation delay.
