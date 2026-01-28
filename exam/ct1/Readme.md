@@ -135,3 +135,90 @@ Your organization has been assigned a class A IP address of 10.0.0.0. It would h
                     0      25      172
 
     ∴ Final IP address **`10.0.25.172`**
+
+## Scenario 2
+
+Explain the basic principles of cryptography. Using a poly-alphabetic cipher encryption with four Caesar cipher -
+
+1. C1 (**k = 4**)
+2. C2 (**k = 11**)
+3. C3 (**k = 17**)
+4. C4 (**k = 6**)
+
+The pattern is:
+
+    C4 C3 C2 C1 C2 C3 C4 C2 C3 C4 C2 C3
+
+Encode the following message:
+
+    midterm examination
+
+**Ans.:** Cryptography is the science of protecting information by transforming it into an unreadable form so that only authorized parties can understand it.
+
+The basic principles are:
+
+1. **Confidentiality:** Ensures that information is accessible only to authorized users (achieved using encryption)
+
+2. **Integrity:** Ensures that data is not altered during transmission or storage.
+
+3. **Authentication:** Verifies the identity of the sender and receiver of information.
+
+4. **Non-repudiation:** Prevents a sender from denying that they sent a message.
+
+A poly-alphabetic cipher uses multiple substitution alphabets. Each character is encrypted using a different Caesar cipher key, based on a repeating pattern.
+
+Given Caesar Ciphers,
+
+1. C1 (**k = 4**)
+2. C2 (**k = 11**)
+3. C3 (**k = 17**)
+4. C4 (**k = 6**)
+
+Encryption Pattern,
+
+    C4 C3 C2 C1 C2 C3 C4 C2 C3 C4 C2 C3
+
+We know,
+
+Alphabet–Number Mapping,
+
+    A = 0
+    B = 1
+    ...,
+    Z = 25
+
+Caesar Cipher Formula,
+
+    C = (P + k) % 26
+        where,
+            P = plaintext letter value
+            k = key
+            C = ciphertext letter value
+
+Now,
+
+    Original message  : midterm examination
+    Encrypted message : szoxpis pogxztlkoze
+
+Encryption Table,
+
+| Letter | P   | Cipher | k   | Calculation    | C   | Result |
+| ------ | --- | ------ | --- | -------------- | --- | ------ |
+| m      | 12  | C4     | 6   | (12+6) mod 26  | 18  | s      |
+| i      | 8   | C3     | 17  | (8+17) mod 26  | 25  | z      |
+| d      | 3   | C2     | 11  | (3+11) mod 26  | 14  | o      |
+| t      | 19  | C1     | 4   | (19+4) mod 26  | 23  | x      |
+| e      | 4   | C2     | 11  | (4+11) mod 26  | 15  | p      |
+| r      | 17  | C3     | 17  | (17+17) mod 26 | 8   | i      |
+| m      | 12  | C4     | 6   | (12+6) mod 26  | 18  | s      |
+| e      | 4   | C2     | 11  | (4+11) mod 26  | 15  | p      |
+| x      | 23  | C3     | 17  | (23+17) mod 26 | 14  | o      |
+| a      | 0   | C4     | 6   | (0+6) mod 26   | 6   | g      |
+| m      | 12  | C2     | 11  | (12+11) mod 26 | 23  | x      |
+| i      | 8   | C3     | 17  | (8+17) mod 26  | 25  | z      |
+| n      | 13  | C4     | 6   | (13+6) mod 26  | 19  | t      |
+| a      | 0   | C2     | 11  | (0+11) mod 26  | 11  | l      |
+| t      | 19  | C3     | 17  | (19+17) mod 26 | 10  | k      |
+| i      | 8   | C4     | 6   | (8+6) mod 26   | 14  | o      |
+| o      | 14  | C2     | 11  | (14+11) mod 26 | 25  | z      |
+| n      | 13  | C3     | 17  | (13+17) mod 26 | 4   | e      |
