@@ -30,6 +30,14 @@ Course offered by,
 - **Class 06**: 22 January 2026 (❌ Class cancelled)
 - [**Class 07**](https://shadowshahriar.github.io/cse320/notes/class-05.pdf): 27 January 2026
 
+## CT Questions Solve
+
+- **Pre-Mid**
+    - [**Class Test 01**](https://shadowshahriar.github.io/cse320/exam/ct1)
+        - [**Section 5**](https://shadowshahriar.github.io/cse320/exam/ct1/#ct-question-s5)
+        - [**Section 8**](https://shadowshahriar.github.io/cse320/exam/ct1/#ct-question-s8)
+        - **Section 9**
+
 ## Lab Reports
 
 - [**Lab 01**](#lab-reports): 05 January (❌ Class cancelled)
