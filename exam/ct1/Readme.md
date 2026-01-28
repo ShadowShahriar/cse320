@@ -1,4 +1,4 @@
-# CT Question (Section 5)
+# CT Question (S5)
 
 ![Question Paper](./mid-section-05.jpg)
 
@@ -66,3 +66,72 @@ A package of **1,500 bytes** in size is sent over a link with a transmission rat
                   R = Transmission Rate
 
     Propagation Delay (**pD**) occurs while bits are traveling through the link. It depends on **physical distance of the link** and **speed of signal in the medium**. So changing packet size or bandwidth will **NOT** affect propagation delay.
+
+# CT Question (S8)
+
+![Question Paper](./mid-section-08.jpg)
+
+## Scenario 1
+
+Your organization has been assigned a class A IP address of 10.0.0.0. It would help (them) if you found the answers to the following questions -
+
+1.  **Total host addresses**
+
+    **Ans.:** Since the IP address of the organization is 10.0.0.0 which is a **class A** IP address,
+
+        Subnet mask   : 255.0.0.0 (Default)
+        Prefix length : /8
+        Host bits     : 32 − 8 = 24
+
+    So, there are **2^24** host addresses, where **2^24 − 2** of them are valid.
+
+2.  **Total subnet addresses**
+
+    **Ans.:** For a default Class A network (no subnetting applied), there is only 1 subnet address (**255.0.0.0**)
+
+3.  **First address and first valid host address in the block**
+
+    **Ans.:**
+
+        First network address    : 10.0.0.0
+        First valid host address : 10.0.0.1
+
+4.  **Last address and last valid host address in the block**
+
+    **Ans.:**
+
+        Last network address    : 10.255.255.255
+        Last valid host address : 10.255.255.254
+
+5.  **Address of 55,10,280th, 85,259th and 6,573th**
+
+    **Ans.:** From the given scenario, the first 8 bits of the 32-bit address is fixed (10)
+
+        Binary of 10      = 00001010
+        ∴ Network address = 10.A.B.C
+
+    Here, A-C denotes the remaining 24 bits of the address. Since the first valid host starts at 1, we need to substract 1 from the `n`th host.
+
+    <ins><strong>55,10,280th Host</strong></ins>
+
+        5510280 − 1 = 5510279
+        5510279 = 01010100 00001111 11010111
+                    84       15       215
+
+    ∴ Final IP address **`10.84.15.215`**
+
+    <ins><strong>85,259th Host</strong></ins>
+
+        85259 − 1 = 85258
+        85258 = 00000001 01001101 00001010
+                    1       77       10
+
+    ∴ Final IP address **`10.1.77.10`**
+
+    <ins><strong>6,573th</strong></ins>
+
+        6573 − 1 = 6572
+        6572 = 00000000 00011001 10101100
+                    0      25      172
+
+    ∴ Final IP address **`10.0.25.172`**
