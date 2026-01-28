@@ -1,5 +1,7 @@
 # CT Question (Section 5)
 
+![Question Paper](./mid-section-05.jpg)
+
 ## Scenario 1
 
 A video conferencing application works smoothly at night but suffers noticeable lag during office hours.
