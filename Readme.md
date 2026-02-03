@@ -16,7 +16,6 @@ Course offered by,
 
 ## Course Materials
 
-> [IMPORTANT]
 > All course materials have been moved to this dedicated [**Google Drive folder**](https://drive.google.com/drive/folders/1v-3MmFGgMZx1Ud-QjGrWOSmQgL9v-UEK?usp=sharing) to avoid GitHub pages size constraints.
 
 ## Class Notes
