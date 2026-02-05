@@ -29,6 +29,7 @@ Course offered by,
 - [**Class 07**](https://shadowshahriar.github.io/cse320/notes/class-07.pdf): 27 January 2026
 - **Class 08**: 29 January 2026 (❌ CT break)
 - [**Class 09**](https://shadowshahriar.github.io/cse320/notes/class-09.pdf): 03 February 2026 (Contributed by [**Munasib Maria Oyshi**](https://github.com/BlackPepper404))
+- [**Class 10**](https://shadowshahriar.github.io/cse320/notes/class-10.pdf): 05 February 2026 (EOC)
 
 ## CT Questions Solve
 
