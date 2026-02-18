@@ -169,7 +169,7 @@
 
 ### Theoretical Questions
 
-Thanks to **Amrin Jahan** for helping me write some of the answers in given here.
+Thanks to **Amrin Jahan** for helping me write some of the answers given here.
 
 #### 1.1. Explain Throughput and Bandwidth
 
