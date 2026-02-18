@@ -29,9 +29,9 @@
 
 2. [**Theoretical Question**](#theoretical-questions)
     - **Chapter I**
-        - Explain Throughput and Bandwidth
-        - Packet Switching vs Circuit Switching
-        - Four Types of E2E Delays
+        - [Explain Throughput and Bandwidth](#11-explain-throughput-and-bandwidth)
+        - [Packet Switching vs Circuit Switching](#12-packet-switching-vs-circuit-switching)
+        - [Four Types of E2E Delays](#13-four-types-of-e2e-delays)
         - Packet Inception
         - DDoS Attack
         - Why Layering is Required in Networking?
@@ -209,5 +209,36 @@ Thanks to **Amrin Jahan** for helping me write some of the answers given here.
 | Depends on network traffic, delays, and errors          | Depends on network design and hardware             |
 
 ---
+
+#### 1.2. Packet Switching vs Circuit Switching
+
+| **Feature**       | **Packet Switching**      | **Circuit Switching** |
+| :---------------- | :------------------------ | :-------------------- |
+| **Connection**    | NO dedicated path         | Dedicated path        |
+| **Dataflow**      | Data divided into packets | Continuous            |
+| **Bandwidth Use** | Efficient                 | Inefficient           |
+| **Delay**         | Variable                  | Fixed/predictable     |
+| **Reliability**   | Network dependent         | Very high             |
+| **Example**       | Internet                  | Telephone call        |
+
+---
+
+#### 1.3. Four Types of E2E Delays
+
+End-to-end (E2E) delay is the total time a packet takes to travel from source to destination across a network. There are four key components of the E2E delay:
+
+1. <ins><strong>Transmission Delay (D<sub>trans</sub>):</strong></ins> The time required to push all bits of a data packet onto a network link.
+
+<pre>D<sub>trans</sub> = L / R
+   Where, L = Packet size
+          R = Transmission Rate or Bandwidth</pre>
+
+2. <ins><strong>Propagation Delay (D<sub>prop</sub>):</strong></ins> TODO
+
+3. <ins><strong>Processing Delay (D<sub>proc</sub>):</strong></ins> TODO
+
+4. <ins><strong>Queuing Delay (D<sub>queue</sub>):</strong></ins> TODO
+
+<pre>D&nbsp;=&nbsp;D<sub>trans</sub>&nbsp;+&nbsp;D<sub>prop</sub>&nbsp;+&nbsp;D<sub>proc</sub>&nbsp;+&nbsp;D<sub>queue</sub></pre>
 
 ### Mathematical Questions
