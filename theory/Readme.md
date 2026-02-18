@@ -227,25 +227,25 @@ Thanks to **Amrin Jahan** for helping me write some of the answers given here.
 
 End-to-end (E2E) delay is the total time a packet takes to travel from source to destination across a network. There are four key components of the E2E delay:
 
-1. <ins><strong>Transmission Delay (D<sub>trans</sub>):</strong></ins> The time required to push all bits of a data packet onto a network link.
+- <ins><strong>Transmission Delay (D<sub>trans</sub>):</strong></ins> The time required to push all bits of a data packet onto a network link.
 
 <pre>D<sub>trans</sub> = L / R
    Where, L = Packet size
           R = Transmission Rate or Bandwidth</pre>
 
-2. <ins><strong>Propagation Delay (D<sub>prop</sub>):</strong></ins> The time it takes for a signal (bit) to travel from sender to receiver across a physical medium.
+- <ins><strong>Propagation Delay (D<sub>prop</sub>):</strong></ins> The time it takes for a signal (bit) to travel from sender to receiver across a physical medium.
     - Signal speed: <strong>2×10<sup>8</sup> ms<sup>-1</sup></strong> for fiber optic cables.
     - Unlike transmission delay, propagation delay is independent of the data rate or packet size.
 
 <pre>D<sub>prop</sub> = Distance / Speed</pre>
 
-3. <ins><strong>Processing Delay (D<sub>proc</sub>):</strong></ins> The time required for network devices (<strong>routers, switches, firewalls</strong>) to examine a packet's header, determine its destination, check for errors and perform security checks.
+- <ins><strong>Processing Delay (D<sub>proc</sub>):</strong></ins> The time required for network devices (<strong>routers, switches, firewalls</strong>) to examine a packet's header, determine its destination, check for errors and perform security checks.
 
-4. <ins><strong>Queuing Delay (D<sub>queue</sub>):</strong></ins> The time a data packet spends waiting in a network device's buffer (queue) before it is transmitted, occurring when incoming traffic exceeds the outgoing link's capacity. **It is a major, variable source of network latency and congestion.**
+- <ins><strong>Queuing Delay (D<sub>queue</sub>):</strong></ins> The time a data packet spends waiting in a network device's buffer (queue) before it is transmitted, occurring when incoming traffic exceeds the outgoing link's capacity. **It is a major, variable source of network latency and congestion.**
 
 **Calculating E2E Delay:**
 
-<pre>D&nbsp;=&nbsp;D<sub>trans</sub>&nbsp;+&nbsp;D<sub>prop</sub>&nbsp;+&nbsp;D<sub>proc</sub>&nbsp;+&nbsp;D<sub>queue</sub></pre>
+<pre>D<sub>e2e</sub>&nbsp;=&nbsp;D<sub>trans</sub>&nbsp;+&nbsp;D<sub>prop</sub>&nbsp;+&nbsp;D<sub>proc</sub>&nbsp;+&nbsp;D<sub>queue</sub></pre>
 
 ---
 
