@@ -97,16 +97,17 @@
 
 ### Full Forms
 
-| Abbreviation | Full Form                       |
-| :----------- | :------------------------------ |
-| FDM          | Frequency Division Multiplexing |
-| TDM          | Time-Division Multiplexing      |
-| DoS          | Denial of Service               |
-| ACK          | Acknowledgment Number           |
-| RTT          | Round Trip Time                 |
-| TTL          | Time to Live                    |
-| AP           | Access Point                    |
-| LAN          | Local Area Network              |
+| Abbreviation | Full Form                                 |
+| :----------- | :---------------------------------------- |
+| FDM          | Frequency Division Multiplexing           |
+| TDM          | Time-Division Multiplexing                |
+| DoS          | Denial of Service                         |
+| ACK          | Acknowledgment Number                     |
+| RTT          | Round Trip Time                           |
+| TTL          | Time to Live                              |
+| AP           | Access Point                              |
+| LAN          | Local Area Network                        |
+| AIMD         | Additive Increase/Multiplicative Decrease |
 
 ### Definitions
 
@@ -167,5 +168,46 @@
 - <ins><strong>Subnetting:</strong></ins> The logical process of dividing a large physical IP network into smaller, manageable sub-networks (_subnets_) to improve network performance, security, and address efficiency.
 
 ### Theoretical Questions
+
+Thanks to **Amrin Jahan** for helping me write some of the answers in given here.
+
+#### 1.1. Explain Throughput and Bandwidth
+
+<ins><strong>Throughput:</strong></ins> The actual rate of successful data delivery over a network channel within a specific period of time, typically measured in Mbps or Gbps.
+
+> _If a network **sends 100 Mb data in 1 second**, the throughput is 100 Mbps._
+
+<ins><strong>Bandwidth:</strong></ins> The (theoretical) maximum amount of data that can be sent through a network channel within a specific period of time.
+
+> _If a network **can send up to 100 Mbps data**, then the bandwidth is 100 Mbps._
+
+<ins><strong>Advantages and Disadvantages of Throughput:</strong></ins>
+
+| **Advantages**                                | **Disadvantages**                             |
+| :-------------------------------------------- | :-------------------------------------------- |
+| • Higher system performance,                  | • Many factors may reduce throughput,         |
+| • Efficient data transfer,                    | • Inconsistent at times,                      |
+| • Medium of comparison of different networks. | • Does NOT reveal the true delay information. |
+
+<ins><strong>Advantages and Disadvantages of Bandwidth:</strong></ins>
+
+| **Advantages**                          | **Disadvantages**              |
+| :-------------------------------------- | :----------------------------- |
+| • (Theoretically) Higher data capacity, | • Costly,                      |
+| • Better network performance,           | • Possibility of wastage,      |
+| • Less congestion.                      | • Does NOT translate to speed. |
+
+<ins><strong>Difference between Throughput and Bandwidth:</strong></ins>
+
+| **Throughput**                                          | **Bandwidth**                                      |
+| :------------------------------------------------------ | :------------------------------------------------- |
+| The actual data rate sent through the network           | The theoretical maximum data capacity of a network |
+| Shows how much data is _really sent_                    | Shows how much data _can be sent_                  |
+| Measured usually in **Mbps, Gbps**                      | Measured usually in **Mbps, MBps,** or **Gbps**    |
+| Throughput _can change_ depending on network conditions | Bandwidth is _fixed_                               |
+| High throughput indicates high performance              | High bandwidth does NOT translate to high speed    |
+| Depends on network traffic, delays, and errors          | Depends on network design and hardware             |
+
+---
 
 ### Mathematical Questions
