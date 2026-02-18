@@ -18,6 +18,15 @@ Course offered by,
 
 > All course materials have been moved to this dedicated [**Google Drive folder**](https://drive.google.com/drive/folders/1v-3MmFGgMZx1Ud-QjGrWOSmQgL9v-UEK?usp=sharing) to avoid GitHub pages size constraints.
 
+## Theory Quick Notes
+
+- [**Mid Term Examination**](https://shadowshahriar.github.io/cse320/theory/#mid-term-examination)
+    - [Topic List](https://shadowshahriar.github.io/cse320/theory/#topic-list)
+    - [Full Forms](https://shadowshahriar.github.io/cse320/theory/#full-forms)
+    - [Definitions](https://shadowshahriar.github.io/cse320/theory/#definitions)
+    - [Theoretical Questions](https://shadowshahriar.github.io/cse320/theory/#theoretical-questions)
+    - [Mathematical Questions](https://shadowshahriar.github.io/cse320/theory/#mathematical-questions)
+
 ## Class Notes
 
 - [**Class 01**](https://shadowshahriar.github.io/cse320/notes/class-01.pdf): 06 January 2026
