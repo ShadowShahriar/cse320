@@ -32,7 +32,7 @@
         - [Explain Throughput and Bandwidth](#11-explain-throughput-and-bandwidth)
         - [Packet Switching vs Circuit Switching](#12-packet-switching-vs-circuit-switching)
         - [Four Types of E2E Delays](#13-four-types-of-e2e-delays)
-        - Packet Inception
+        - [Packet Interception](#14-packet-interception)
         - DDoS Attack
         - Why Layering is Required in Networking?
         - Elaborate Internet Protocol Stack
@@ -246,6 +246,30 @@ End-to-end (E2E) delay is the total time a packet takes to travel from source to
 **Calculating E2E Delay:**
 
 <pre>D<sub>e2e</sub>&nbsp;=&nbsp;D<sub>trans</sub>&nbsp;+&nbsp;D<sub>prop</sub>&nbsp;+&nbsp;D<sub>proc</sub>&nbsp;+&nbsp;D<sub>queue</sub></pre>
+
+---
+
+#### 1.4. Packet Interception
+
+Also known as **packet sniffing**, packet interception the act of capturing, monitoring, and analyzing data packets traversing a network to inspect their contents, such as unencrypted logins, passwords, and user traffic.
+
+<ins><strong>Use Cases:</strong></ins>
+
+- **Network Troubleshooting:** Identifying performance bottlenecks, congestion, and packet loss.
+- **Security Analysis:** Detecting intrusions, malware, and suspicious traffic patterns.
+- **Forensics:** Creating network activity log for investigation purposes.
+
+<ins><strong>Techniques of Interception:</strong></ins>
+
+- **SPAN**/Mirroring
+- **Network TAPs**
+- Software Sniffers (**Wireshark**)
+
+<ins><strong>Prevention and Defence:</strong></ins>
+
+- **Encryption:** Using HTTPS, SSL/TLS, and VPNs to make captured data unreadable.
+- **Network Segmentation:** Limits the scope of what someone can monitor.
+- **Secured Infrastructure:** Using secure switches and disabling unused ports to prevent unauthorized monitoring.
 
 ---
 
