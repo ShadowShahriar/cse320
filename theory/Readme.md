@@ -59,11 +59,10 @@
         - [Mitigating HOL Blocking (HTTP/2)](#29-mitigating-hol-blocking-http2)
         - [SMTP and its Components](#210-smtp-and-its-components)
         - [IMAP and POP3](#211-imap-and-pop3)
-        - DNS: Services & Structure
-        - DNS: Tree
-        - TLD & Authoritative DNS
-        - Queries: Iterated & Recursive
-        - DNS Records: Components
+        - [DNS: Services & Structure](#212-dns-services-and-structure)
+        - [TLD and Authoritative DNS](#213-tld-and-authoritative-dns)
+        - [Queries: Iterated & Recursive](#214-iterated--recursive-queries)
+        - [DNS Records: Components](#215-dns-records-components)
         - FTP: Process, Commands & Status Codes
         - IP Addressing: Classes A-E
         - Cryptographic Components
@@ -122,6 +121,8 @@
 | IHL          | Internet Header Length                    |
 | HOL          | Head-of-Line                              |
 | IMAP         | Internet Message Access Protocol          |
+| DNS          | Domain Name System                        |
+| TLD          | Top-Level Domain                          |
 
 ### Definitions
 
@@ -742,6 +743,80 @@ Internet Message Access Protocol (IMAP) is a standard, widely used email protoco
 | Emails are not accessible offline.                                                                                                            | Emails are accessible offline but only on the device they were downloaded on.                 |
 | The bodies of emails are not downloaded until a user clicks on them, but subject lines and sender names populate quickly in the email client. | Emails are downloaded to the device by default, so messages may take longer to load.          |
 | IMAP requires more server space because emails are not automatically deleted from the server.                                                 | POP3 conserves email server storage because emails are automatically deleted from the server. |
+
+---
+
+#### 2.12. DNS: Services and Structure
+
+Domain Name System (**DNS**) is a hierarchical, distributed database that translates human-readable domain names into numerical IP addresses, enabling web browsing and service mapping.
+
+<ins><strong>Services/Features:</strong></ins>
+
+- **Name Resolution:** Translates domain names into IP addresses, making it easier for users to locate websites and resources.
+
+- **Caching:** Stores previous query results to speed up subsequent requests and reduce load on authoritative servers.
+
+- **Load Balancing:** Distributes traffic across multiple servers to enhance performance and availability.
+
+- **Reverse Resolution:** Maps an IP address back to its corresponding domain name.
+
+- **Dynamic Updates:** Allows for automatic registration and updates of DNS records.
+
+- **Mail Server Aliasing**
+
+<ins><strong>Structure:</strong></ins>
+
+DNS is hierarchical primarily to enable scalability, distributed management, and efficiency for the internet's massive, growing infrastructure.
+
+<p align="center"><img alt="DNS" src="../assets/images/dns.jpg"/><br><i>figure 2.12: DNS Structure</i></p>
+
+By using a tree-like structure (root, TLDs, authoritative servers), no single server needs to store all domain records, preventing bottlenecks and allowing decentralized administration of domain names.
+
+---
+
+#### 2.13. TLD and Authoritative DNS
+
+**Top-Level Domain (TLD):** A top-level domain (**TLD**) is the final segment of a domain name (e.g., '.com' in 'google.com'), representing the highest level in the hierarchical
+Domain Name System (DNS). TLDs categorize websites by purpose (.com, .org, .edu) or geographic location (.uk, .jp, .de). TLDs are essential for navigating the internet by directing browser requests to specific IP addresses.
+
+**Authoritative DNS:** An authoritative DNS server is the final, trusted source of truth that holds the actual DNS records (**A, MX, CNAME, etc.**) for a specific domain, translating human-readable domain names into IP addresses. When a user enters a URL, the recursive resolver (managed by an ISP or service like `8.8.8.8`) queries the authoritative server to get the final IP address.
+
+---
+
+#### 2.14. Iterated & Recursive Queries
+
+| Feature            | Recursive                                                                                                                                                  | Iterative                                                                                                          |
+| :----------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------- |
+| Who does the work? | The DNS resolver performs all follow-up queries on behalf of the client.                                                                                   | The client (or the local resolver acting as a client) performs each subsequent query itself, following referrals.  |
+| Response Type      | Returns the final, complete answer (the IP address) or an error message.                                                                                   | Returns the best information it has (either the answer or a referral to another DNS server).                       |
+| Typical Use        | Used between a client device (e.g., your computer or browser) and its designated recursive DNS resolver (like your ISP's or Google Public DNS at 8.8.8.8). | Used between the recursive DNS resolver and other DNS servers in the hierarchy (root, TLD, authoritative servers). |
+| Complexity         | Simple for the client, which makes one request and waits for the final result.                                                                             | More complex for the client, which must manage the step-by-step process of querying multiple servers.              |
+
+---
+
+#### 2.15. DNS Records: Components
+
+DNS records are instructions within a DNS zone file that map domain names to IP addresses or other resources.
+
+<p align="center"><img alt="DNS Record Format" src="../assets/images/dns-record.png"/><br><i>figure 2.15: DNS Record Format</i></p>
+
+<ins><strong>Key Components of a DNS Record:</strong></ins>
+
+- **Name (Host/Label):** The domain name or subdomain the record applies to (_e.g., www or @ for the root domain_).
+- **Type:** The specific type of record (_e.g., A, AAAA, CNAME, MX, NS, TXT_).
+- **Value (Target/Data):** The information the record provides, such as an IP address, a mail server (mail.example.com), or a text string.
+- **TTL (Time to Live):** The duration in seconds that DNS resolvers should cache the record before checking for updates.
+- **Class:** Almost always "IN" for Internet, indicating an IP address.
+
+<ins><strong>Common DNS Record Types:</strong></ins>
+
+- **A/AAAA:** Maps a hostname to an IPv4 (A) or IPv6 (AAAA) address.
+- **CNAME:** Points a domain or subdomain to another hostname (alias)
+- **MX:** Routes email to the correct mail server.
+- **NS:** Delegates a DNS zone to use specific authoritative name servers.
+- **TXT:** Allows associating arbitrary text with a host, often used for security (SPF, DKIM) or verification.
+- **SOA (Start of Authority):** Contains crucial information about the DNS zone, such as the primary nameserver, contact email, and refresh rates.
+- **PTR (Pointer):** Used in reverse DNS lookups to map an IP address to a hostname.
 
 ---
 
