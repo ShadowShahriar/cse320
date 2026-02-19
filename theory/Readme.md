@@ -70,9 +70,9 @@
         - Cryptographic Components
 
     - **Chapter III**
-        - TCP vs UDP
-        - UDP Segment Headers
-        - TCP Segment Structure
+        - [TCP vs UDP](#31-tcp-vs-udp)
+        - [UDP Segment Headers](#32-udp-segment-headers)
+        - [TCP Segment Structure](#33-tcp-segement-structure)
 
     - **Chapter IV**
         - IPv4 Packet Structure
@@ -115,6 +115,9 @@
 | DHCP         | Dynamic Host Configuration Protocol       |
 | CIDR         | Classless Inter-Domain Routing            |
 | APIPA        | Automatic Private IP Addressing           |
+| TCP          | Transmission Control Protocol             |
+| UDP          | User Datagram Protocol                    |
+| MSS          | Maximum Segment Size                      |
 
 ### Definitions
 
@@ -459,6 +462,85 @@ IP addressing is a method of assigning unique numerical labels to devices for id
 - **Loopback Address (127.0.0.1)**: Used by a computer to test its own network interface.
 - **Default Gateway (0.0.0.0)**: Represents an unknown or default network target.
 - **Automatic Private IP Addressing (APIPA)**: Assigned automatically (_169.254.0.1_ to _169.254.254.254_) if DHCP fails.
+
+---
+
+#### 3.1. TCP vs UDP
+
+**Transmission Control Protocol (TCP):** A reliable, connection-oriented transport protocol that ensures accurate and ordered data delivery. It uses control mechanisms to guarantee data correctness, which makes it slower but dependable.
+
+**User Datagram Protocol (UDP):** A fast, connectionless transport protocol that sends data without reliability guarantees. It is efficient for applications where speed is more important than accuracy.
+
+| TCP                                             | UDP                                    |
+| :---------------------------------------------- | :------------------------------------- |
+| Connection-oriented; uses a three-way handshake | Connectionless; no handshake           |
+| Guarantees reliable data delivery               | Does not guarantee delivery            |
+| Uses acknowledgements (ACKs)                    | No acknowledgements                    |
+| Supports retransmission of lost packets         | No retransmission support              |
+| Ensures packets are delivered in order          | Does not ensure ordering               |
+| Provides flow control and congestion control    | No flow or congestion control          |
+| Slower due to higher overhead                   | Faster with minimal overhead           |
+| Variable header size                            | Fixed header size                      |
+| Treats data as a continuous byte stream         | Treats data as independent messages    |
+| Does NOT support broadcasting or multicasting   | Supports broadcasting and multicasting |
+| Used by HTTP, HTTPS, FTP, SMTP                  | Used by DNS, DHCP, VoIP, Streaming     |
+
+#### 3.2. UDP Segment Headers
+
+A UDP segment consists of a minimal **8-byte header** followed by the application payload data.
+
+<p align="center"><img alt="UDP" src="../assets/images/udp.png"/><br><i>figure 3.2: UDP Segment Headers</i></p>
+
+<ins><strong>UDP Segment Header Structure:</strong></ins>
+
+- **Source Port (16 bits):** Identifies the sending application's port number. It can be set to zero if the destination does not need to reply.
+
+- **Destination Port (16 bits):** Identifies the receiving application's port number on the destination host.
+
+- **Length (16 bits):** Specifies the total length in bytes of the UDP header and payload data combined. The minimum value is 8 bytes.
+
+- **Checksum (16 bits):** Used for error checking to verify header and payload integrity. It is optional in IPv4 but required in IPv6.
+
+- **Data (Variable Length):** The actual payload, such as audio/video samples or DNS queries.
+
+#### 3.3. TCP Segement Structure
+
+A TCP segment consists of a **20–60 byte header** followed by application data.
+
+<p align="center"><img alt="TCP" src="../assets/images/tcp.jpg"/><br><i>figure 3.3: TCP Segment Headers</i></p>
+
+<ins><strong>TCP Segment Header Structure:</strong></ins>
+
+- **Source Port (16 bits):** Identifies the sending application.
+
+- **Destination Port (16 bits):** Identifies the receiving application.
+
+- **Sequence Number (32 bits):** Byte number of the first byte in this segment, used for reassembling segments in order.
+
+- **Acknowledgment Number (32 bits):** Next byte expected by the receiver; valid only if ACK flag is set.
+
+- **Data Offset/Header Length (4 bits):** Indicates where data begins (size of header, 20-60 bytes).
+
+- **Control Flags (6 bits/1 bit each)**:
+    - **URG:** Urgent pointer field is significant.
+    - **ACK:** Acknowledgment field is significant.
+    - **PSH:** Push function; receiver should pass data to application immediately.
+    - **RST:** Reset the connection.
+    - **SYN:** Synchronize sequence numbers (used in connection setup).
+    - **FIN:** No more data from sender (used in connection termination).
+
+- **Window Size (16 bits):** Used for flow control, indicating the number of bytes the receiver is willing to accept.
+
+- **Checksum (16 bits):** Used for error detection of the header and data.
+
+- **Urgent Pointer (16 bits):** Points to the end of urgent data if URG flag is set.
+
+- **Options (0-40 bytes):** Optional header information, such as Maximum Segment Size (MSS)
+
+<ins><strong>TCP Segment Components:</strong></ins>
+
+- **Header:** 20 bytes **(mandatory)** up to 60 bytes **(with options)**.
+- **Payload (Data):** The actual application data being transferred.
 
 ---
 
