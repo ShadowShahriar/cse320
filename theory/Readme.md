@@ -88,7 +88,7 @@
     - [**03: Packet Queueing Delay**](https://shadowshahriar.dev/cse320/exam/ct1/#scenario-2)
     - 04: Nodal Delay
     - 05: Identify Class by converting IP to Binary
-    - 06: Internet Checksum
+    - [**06: Internet Checksum**](#6-internet-checksum)
     - 07: TCP RTT
     - 08: TCP Timeout
 
@@ -1136,3 +1136,59 @@ TCP Slow Start is a foundational TCP congestion control algorithm that prevents 
 <p align="center"><img alt="TCP Slow Start" src="../assets/images/tcp-slow-start.png"/><br><i>figure 4.7: TCP Slow Start</i></p>
 
 ---
+
+### Mathematical Questions
+
+#### 6. Internet Checksum
+
+To calculate the Internet checksum, treat the data as a sequence of **16-bit integers**, sum them using 16-bit one's complement arithmetic (adding carries back to the LSB), and take the one's complement of the result.
+
+**Steps:**
+
+- **Divide Data into 16-bit Words:** Segment the binary data into 16-bit (2-byte) chunks. If the total length is odd, pad the last byte with a zero byte.
+- **Sum the Words:** Add the 16-bit words together using binary addition.
+- **Handle Carries (Wrap Around):** If the sum exceeds 16 bits (i.e., a carry occurs out of the MSB), add the carry back to the least significant bit (LSB).
+- **Take One's Complement:** Flip all bits (change 0s to 1s and 1s to 0s) in the final 16-bit sum.
+
+**Verification:**
+
+The receiver adds all 16-bit words (including the checksum) and wraps carries. If the result is 1111111111111111, the packet is assumed valid.
+
+**Example:**
+
+> _Calculate the Internet checksum of these two bytes: `11010010` and `01100101`_
+
+**Step 1: Convert Bytes to Decimal**
+
+First, we convert the binary bytes to decimal.
+
+```
+11010010 (binary) = 210 (decimal)
+01100101 (binary) = 101 (decimal)
+```
+
+**Step 2: Add the Decimal Values**
+
+Next, we add the decimal values together.
+
+```
+210 + 101 = 311
+```
+
+**Step 3: Convert the Sum to Binary**
+
+We then convert the sum to binary.
+
+```
+311 (decimal) = 100110111 (binary)
+```
+
+**Step 4: Take the One's Complement**
+
+Finally, we take the one's complement of the binary sum. This means flipping all the bits (changing 1s to 0s and 0s to 1s).
+
+```
+100110111 (binary) = 011001000 (one's complement)
+```
+
+So, the Internet checksum of the two bytes **11010010** and **01100101** is **011001000**.
