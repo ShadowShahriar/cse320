@@ -582,6 +582,8 @@ Cookies are generally limited to **4KB in size**.
 2. The browser saves the cookie.
 3. For subsequent requests to the same domain, the browser sends the cookie back in the `Cookie` header.
 
+---
+
 #### 2.7A. Web Caching
 
 A web cache is a technology that temporarily stores copies of website data, such as HTML, images, and JavaScript, closer to the user to accelerate page loading speeds, reduce server load, and minimize bandwidth usage.
