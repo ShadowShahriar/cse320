@@ -43,9 +43,9 @@
         - [Why do packet loss and delay occur?](#112-why-do-packet-loss-and-delay-occur)
 
     - **Chapter II**
-        - Client-Server Model
-        - Peer-to-Peer Model
-        - Sockets
+        - [Client-Server Model](#21-client-server-model)
+        - [Peer-to-Peer Model](#22-peer-to-peer-model)
+        - [Sockets](#23-sockets)
         - Addressing Process
         - Web (HTTP) Protocol
         - HTTP Connection Types
@@ -102,12 +102,16 @@
 | FDM          | Frequency Division Multiplexing           |
 | TDM          | Time-Division Multiplexing                |
 | DoS          | Denial of Service                         |
+| DDoS         | Distributed Denial of Service             |
 | ACK          | Acknowledgment Number                     |
 | RTT          | Round Trip Time                           |
 | TTL          | Time to Live                              |
 | AP           | Access Point                              |
 | LAN          | Local Area Network                        |
 | AIMD         | Additive Increase/Multiplicative Decrease |
+| P2P          | Peer-to-Peer                              |
+| CDN          | Content Delivery Network                  |
+| VPN          | Virtual Private Network                   |
 
 ### Definitions
 
@@ -364,5 +368,63 @@ Throughput = min(<i>R<sub>1</sub></i>, <i>R<sub>2</sub></i>, ..., <i>R<sub>n</su
 - **Buffer Overflows:** When a network device receives more data than its memory buffer can hold, it drops incoming packets.
 
 - **Routing/Configuration Errors:** Misconfigured network devices can cause packets to loop or be dropped.
+
+#### 2.1. Client-Server Model
+
+The client-server model is a distributed application structure where a client (_e.g., a web browser_) sends requests for data or services to a server (_e.g., a web server_), which processes them and returns a response.
+
+**Server:**
+
+- Always-on host
+- Has apermanent IP address
+- Often used in data centers for scaling capabilities
+
+**Clients:**
+
+- Contact, communicate with server
+- Maybe intermittently connected
+- May have dynamic IP addresses
+- Do not communicate directly with each other
+
+Example protocols that establishes a client-server model: **HTTP**, **IMAP**, **FTP**.
+
+---
+
+#### 2.2. Peer-to-Peer Model
+
+A peer-to-peer (**P2P**) model is a decentralized network architecture where individual computers, or "peers," act as both clients and servers, directly sharing resources like files, processing power, or storage without a central authority.
+
+- There is NO always-on server.
+- Arbitrary end systems directly communicate with each other.
+- Peers request service from other peers, providing service in return to other peers.
+- **Self scalability:** new peers bring new service capacity, as well as new service demands.
+- Peers are intermittently connected and change IP addresses.
+- **Example:** P2P file sharing.
+
+---
+
+#### 2.3. Sockets
+
+A network socket is the software-defined, bidirectional endpoint of a communication link between two programs running on a network. **Sockets are essential for client-server communication, enabling processes to exchange data over protocols like TCP or UDP.**
+
+<p align="center"><img alt="Sockets" src="../assets/images/sockets.webp"/><i>figure 2.3: Sockets in Networking</i></p>
+
+<ins><strong>Types:</strong></ins>
+
+- **Stream Sockets (TCP):** Provide reliable, ordered, and error-checked delivery of data, commonly used for HTTP, web browsing, and email.
+
+- **Datagram Sockets (UDP):** Offer faster, connectionless, but unreliable delivery, ideal for streaming or online gaming.
+
+<ins><strong>Working Principle:</strong></ins>
+
+1. **Server Side:** The server creates a socket, binds it to a specific port, and listens for incoming connections.
+
+2. **Client Side**: The client creates its own socket and initiates a connection to the server's IP and port.
+
+3. **Communication:** Once connected, both sides use the socket to read/write data, similar to operating on a file.
+
+4. **Termination:** The socket connection is closed when the communication is finished, freeing up the resources.
+
+---
 
 ### Mathematical Questions
