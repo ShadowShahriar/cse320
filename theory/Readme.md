@@ -56,16 +56,15 @@
         - [Cookie Mechanism](#26c-cookie-mechanism)
         - [Web Caching (Proxy Servers) with Example](#27a-web-caching)
         - [Conditional GET](#28-conditional-get)
-        - Mitigating HOL Blocking (HTTP/2)
-        - SMTP and its Components
-        - IMAP
+        - [Mitigating HOL Blocking (HTTP/2)](#29-mitigating-hol-blocking-http2)
+        - [SMTP and its Components](#210-smtp-and-its-components)
+        - [IMAP and POP3](#211-imap-and-pop3)
         - DNS: Services & Structure
         - DNS: Tree
         - TLD & Authoritative DNS
         - Queries: Iterated & Recursive
         - DNS Records: Components
         - FTP: Process, Commands & Status Codes
-        - POP3 IMAP
         - IP Addressing: Classes A-E
         - Cryptographic Components
 
@@ -121,6 +120,8 @@
 | ToS          | Type of Service                           |
 | QoS          | Quality of Service                        |
 | IHL          | Internet Header Length                    |
+| HOL          | Head-of-Line                              |
+| IMAP         | Internet Message Access Protocol          |
 
 ### Definitions
 
@@ -663,6 +664,84 @@ Average end-to-end delay:
 1. Saves bandwidth,
 2. Reduces latency and server load,
 3. Allows caches to efficiently validate their stored content.
+
+---
+
+#### 2.9. Mitigating HOL Blocking (HTTP/2)
+
+Head-of-Line (**HOL**) blocking is a networking performance bottleneck where the first packet (or request) in a queue stalls all subsequent packets, even if those later packets are destined for idle resources.
+
+<p align="center"><img alt="HOL Blocking in HTTP 1.1" src="../assets/images/hol-01.jpg"/><br><i>figure 2.9.1: HOL Blocking in HTTP 1.1</i></p>
+
+- **HTTP/2 multiplexing** enables sending multiple requests and responses in parallel over a single connection, allowing independent handling of resources.
+
+- HTTP/2 breaks down messages into independent, numbered frames (**streams**), allowing them to be interleaved and reassembled efficiently.
+
+- HTTP/2 Allows the client to tell the server which resources are more important, ensuring critical data is sent first even within a multiplexed connection.
+
+<p align="center"><img alt="Mitigating HOL Blocking in HTTP/2" src="../assets/images/hol-02.jpg"/><br><i>figure 2.9.2: Mitigating HOL Blocking in HTTP/2</i></p>
+
+- **Limitation:** Since **HTTP/2 runs over TCP**, if a single TCP packet is lost, all streams within that connection are stalled until the packet is retransmitted. This is particularly noticeable in high-latency or unstable networks.
+
+---
+
+#### 2.10. SMTP and its Components
+
+Simple Mail Transfer Protocol (**SMTP**) is the industry-standard protocol for sending and relaying outgoing emails across networks, acting as the internet's digital post office.
+
+<p align="center"><img alt="SMTP Model" src="../assets/images/smtp.webp"/><br><i>figure 2.10: SMTP Model</i></p>
+
+<ins><strong>Working Principle:</strong></ins>
+
+- **Client to Server:** Client sends the message to the email provider's server (SMTP server).
+
+- **Server to Server (Relay):** The SMTP server locates the recipient's mail server and transfers the message.
+
+- **Delivery:** The recipient's mail server receives the message and stores it, often requiring **IMAP/POP3** for retrieval.
+
+<ins><strong>Components:</strong></ins>
+
+- **Mail User Agent (MUA):** It is a computer application that helps you in sending and retrieving mail. It is responsible for creating email messages for transfer to the mail transfer agent (MTA).
+- **Mail Submission Agent (MSA):** It is a computer program that receives mail from a Mail User Agent (MUA) and interacts with the Mail Transfer Agent (MTA) for the transfer of the mail.
+- **Mail Transfer Agent (MTA):** It is software that has the work to transfer mail from one system to another with the help of SMTP.
+- **Mail Delivery Agent (MDA):** A mail Delivery agent or Local Delivery Agent is basically a system that helps in the delivery of mail to the local system.
+
+<ins><strong>Core Operations:</strong></ins>
+
+- **Connection:** The client establishes a TCP connection.
+- **HELO/EHLO:** It initiates the session by identifying itself with **HELO (basic)** or **EHLO (extended)**.
+- **MAIL FROM:** Initiates the transaction and specifies the sender's email address (envelope sender).
+- **RCPT TO:** Identifies the recipient's email address. This command can be issued multiple times for multiple recipients.
+- **DATA:** Signals the start of the message content (header and body). The client sends the content, ending with a single period (.) on a line.
+- **QUIT:** Terminates the SMTP session.
+
+<ins><strong>SMTP vs HTTP:</strong></ins>
+
+| Feature             | SMTP            | HTTP                             |
+| :------------------ | :-------------- | :------------------------------- |
+| **Purpose**         | Sending Email   | Transferring Web Data            |
+| **Push/Pull**       | Push            | Pull                             |
+| **Default Port(s)** | 25, 587, or 465 | 80 or 443                        |
+| **Encoding**        | 7-bit ASCII     | No specific encoding restriction |
+| **Connection**      | Persistent      | Persistent or Non-persistent     |
+
+---
+
+#### 2.11. IMAP and POP3
+
+Internet Message Access Protocol (IMAP) is a standard, widely used email protocol (operating on port 143 or 993 for SSL) that allows users to access and synchronize emails across multiple devices.
+
+> _Unlike POP3, **IMAP leaves messages on the server**, ensuring that actions like reading or deleting are reflected everywhere._
+
+<ins><strong>IMAP vs POP3:</strong></ins>
+
+| IMAP                                                                                                                                          | POP3                                                                                          |
+| :-------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------- |
+| Users can access their emails from any device.                                                                                                | By default, emails can only be accessed from the device they are downloaded on.               |
+| The server stores emails; IMAP acts as an intermediary between the server and the client.                                                     | Once downloaded, emails are deleted from the server, unless otherwise configured.             |
+| Emails are not accessible offline.                                                                                                            | Emails are accessible offline but only on the device they were downloaded on.                 |
+| The bodies of emails are not downloaded until a user clicks on them, but subject lines and sender names populate quickly in the email client. | Emails are downloaded to the device by default, so messages may take longer to load.          |
+| IMAP requires more server space because emails are not automatically deleted from the server.                                                 | POP3 conserves email server storage because emails are automatically deleted from the server. |
 
 ---
 
