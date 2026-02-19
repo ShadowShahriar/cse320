@@ -63,7 +63,7 @@
         - [TLD and Authoritative DNS](#213-tld-and-authoritative-dns)
         - [Queries: Iterated & Recursive](#214-iterated--recursive-queries)
         - [DNS Records: Components](#215-dns-records-components)
-        - FTP: Process, Commands & Status Codes
+        - FTP: Process, Commands and Status Codes
         - IP Addressing: Classes A-E
         - Cryptographic Components
 
