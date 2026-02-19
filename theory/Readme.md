@@ -85,7 +85,7 @@
 3. **Mathematical Questions**
     - [**01: IP Addressing**](https://shadowshahriar.github.io/cse320/notes/mid-practice-01.pdf)
     - [**02: Monoalphabetic and Polyalphabetic Cipher**](https://shadowshahriar.dev/cse320/exam/ct1/#scenario-2-1)
-    - 03: Packet Queueing Delay
+    - [**03: Packet Queueing Delay**](https://shadowshahriar.dev/cse320/exam/ct1/#scenario-2)
     - 04: Nodal Delay
     - 05: Identify Class by converting IP to Binary
     - 06: Internet Checksum
