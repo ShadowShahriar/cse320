@@ -46,7 +46,7 @@
         - [Client-Server Model](#21-client-server-model)
         - [Peer-to-Peer Model](#22-peer-to-peer-model)
         - [Sockets](#23-sockets)
-        - Addressing Process
+        - [IP Addressing Method](#24-ip-addressing-method)
         - Web (HTTP) Protocol
         - HTTP Connection Types
         - HTTP Request Methods
@@ -112,6 +112,9 @@
 | P2P          | Peer-to-Peer                              |
 | CDN          | Content Delivery Network                  |
 | VPN          | Virtual Private Network                   |
+| DHCP         | Dynamic Host Configuration Protocol       |
+| CIDR         | Classless Inter-Domain Routing            |
+| APIPA        | Automatic Private IP Addressing           |
 
 ### Definitions
 
@@ -407,7 +410,7 @@ A peer-to-peer (**P2P**) model is a decentralized network architecture where ind
 
 A network socket is the software-defined, bidirectional endpoint of a communication link between two programs running on a network. **Sockets are essential for client-server communication, enabling processes to exchange data over protocols like TCP or UDP.**
 
-<p align="center"><img alt="Sockets" src="../assets/images/sockets.webp"/><i>figure 2.3: Sockets in Networking</i></p>
+<p align="center"><img alt="Sockets" src="../assets/images/sockets.webp"/><br><i>figure 2.3: Sockets in Networking</i></p>
 
 <ins><strong>Types:</strong></ins>
 
@@ -424,6 +427,38 @@ A network socket is the software-defined, bidirectional endpoint of a communicat
 3. **Communication:** Once connected, both sides use the socket to read/write data, similar to operating on a file.
 
 4. **Termination:** The socket connection is closed when the communication is finished, freeing up the resources.
+
+---
+
+#### 2.4. IP Addressing Method
+
+IP addressing is a method of assigning unique numerical labels to devices for identification on a network.
+
+**Core Types:**
+
+- **IPv4:** Uses a 32-bit address, written in dotted-decimal format.
+- **IPv6:** Uses a 128-bit address written in hexadecimal.
+
+**Static vs. Dynamic Addressing:**
+
+- **Static IP:** Manually assigned, permanent, and often used for servers.
+- **Dynamic IP:** Automatically assigned by a DHCP server, common for end-user devices.
+
+**Public vs. Private IP Addresses:**
+
+- **Public IP:** Routable on the internet, assigned by an ISP.
+- **Private IP:** Used within local networks (e.g., home/office) and not directly accessible from the internet.
+
+**Classful and Classless Addressing:**
+
+- **Classful Addressing:** Divides IPv4 addresses into classes (**A-E**) based on the first octet.
+- **Classless Inter-Domain Routing (CIDR):** Replaced classful addressing to improve efficiency by allowing flexible network sizing using a subnet mask or prefix length (_e.g., /27_)
+
+**Special Purpose IP Addresses:**
+
+- **Loopback Address (127.0.0.1)**: Used by a computer to test its own network interface.
+- **Default Gateway (0.0.0.0)**: Represents an unknown or default network target.
+- **Automatic Private IP Addressing (APIPA)**: Assigned automatically (_169.254.0.1_ to _169.254.254.254_) if DHCP fails.
 
 ---
 
