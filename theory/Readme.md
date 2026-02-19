@@ -55,7 +55,7 @@
         - [Components of Cookies](#26b-components-of-cookies)
         - [Cookie Mechanism](#26c-cookie-mechanism)
         - [Web Caching (Proxy Servers) with Example](#27a-web-caching)
-        - Conditional GET
+        - [Conditional GET](#28-conditional-get)
         - Mitigating HOL Blocking (HTTP/2)
         - SMTP and its Components
         - IMAP
@@ -596,7 +596,7 @@ A web cache proxy server is an intermediary server that stores copies of frequen
 
 When a user requests a website, the proxy checks if it has a stored copy. If yes, it serves the cached data instantly. If not, it fetches the data from the origin server, saves a copy for future use, and passes it to the user.
 
-<p align="center"><img alt="Proxy Servers" src="../assets/images/proxy.jpg"/><br><i>figure 2.7A: Web Caching with Proxy Servers</i></p>
+<p align="center"><img alt="Proxy Servers" src="../assets/images/proxy.jpg"/><br><i>figure 2.7B: Web Caching with Proxy Servers</i></p>
 
 **Types of Proxy Caching:**
 
@@ -633,6 +633,34 @@ Average end-to-end delay:
     =   0.6 (2.01) + 0.4
     ~   1.2 sec
 ```
+
+---
+
+#### 2.8. Conditional GET
+
+**A conditional GET** is an HTTP request mechanism that allows a client (like a web browser or proxy server) to ask the server if a cached resource has changed since it was last retrieved.
+
+<ins><strong>Working Principle:</strong></ins>
+
+1. **Initial Request**
+    - The client makes a standard `GET` request for a resource.
+    - The server responds with the resource, client stores the resource body and these headers in its cache.
+
+2. **Conditional Request**
+    - When the resource is requested again and the cached version is considered "stale", the client issues a new `GET` request that includes a conditional header field using the previously stored validator values.
+
+3. **Server Response**
+    - The server checks the condition(s) provided in the request headers against the resource's current state on the server.
+
+    - **If the resource has not changed:** The server tells the client to use its local cached copy, saving bandwidth (**304 Not Modified**)
+
+    - **If the resource has changed:** The server responds with a **200 OK** status code and the full, new resource body, and new validator headers to be used for future conditional requests.
+
+<ins><strong>Benefits:</strong></ins>
+
+1. Saves bandwidth,
+2. Reduces latency and server load,
+3. Allows caches to efficiently validate their stored content.
 
 ---
 
