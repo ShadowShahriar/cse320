@@ -35,9 +35,9 @@
         - [Packet Interception](#14-packet-interception)
         - [DDoS Attack](#15-ddos-attack)
         - [Why Layering is Required in Networking?](#16-why-layering-is-required-in-networking)
-        - Elaborate Internet Protocol Stack
+        - [Elaborate Internet Protocol Stack](#17-internet-protocol-stack)
         - [Cerf and Khan’s Internetworking Principles](#18-cerf-and-khans-internetworking-principles)
-        - Reference Models: OSI, ISO, TCP/IP
+        - [Reference Models: OSI and TCP/IP](#19-reference-models-osi-and-tcpip)
         - [End-to-End Communication](#110-end-to-end-communication)
         - [End-to-End Throughput](#111-end-to-end-throughput)
         - [Why do packet loss and delay occur?](#112-why-do-packet-loss-and-delay-occur)
@@ -63,9 +63,9 @@
         - [TLD and Authoritative DNS](#213-tld-and-authoritative-dns)
         - [Queries: Iterated & Recursive](#214-iterated--recursive-queries)
         - [DNS Records: Components](#215-dns-records-components)
-        - FTP: Process, Commands and Status Codes
-        - IP Addressing: Classes A-E
-        - Cryptographic Components
+        - [FTP: Process, Commands and Status Codes](#216-ftp)
+        - [IP Addressing: Classes A-E](#217-ip-addressing)
+        - [Cryptographic Components]()
 
     - **Chapter III**
         - [TCP vs UDP](#31-tcp-vs-udp)
@@ -82,15 +82,15 @@
         - [Why is AIMD used?](#46b-why-is-aimd-used)
         - [TCP Slow Start](#47-tcp-slow-start)
 
-3. [**Mathematical Questions**](#mathematical-questions)
-    - Packet Queueing Delay
-    - Nodal Delay
-    - IP Addressing
-    - Identify Class by converting IP to Binary
-    - Monoalphabetic and Polyalphabetic Cipher
-    - Internet Checksum
-    - TCP RTT
-    - TCP Timeout
+3. **Mathematical Questions**
+    - [**01: IP Addressing**](https://shadowshahriar.github.io/cse320/notes/mid-practice-01.pdf)
+    - [**02: Monoalphabetic and Polyalphabetic Cipher**](https://shadowshahriar.dev/cse320/exam/ct1/#scenario-2-1)
+    - 03: Packet Queueing Delay
+    - 04: Nodal Delay
+    - 05: Identify Class by converting IP to Binary
+    - 06: Internet Checksum
+    - 07: TCP RTT
+    - 08: TCP Timeout
 
 ### Full Forms
 
@@ -314,6 +314,24 @@ Layering divides the communication process into a series of distinct steps, each
 
 ---
 
+#### 1.7. Internet Protocol Stack
+
+The Internet Protocol Suite (**TCP/IP**) is a five-layer conceptual framework- Physical, Link, Network, Transport, and Application, that standardizes how data is packetized, addressed, routed, and transmitted across networks.
+
+Each layer performs specific functions, from physical signal transmission to user-facing applications, enabling robust end-to-end data communication.
+
+1. **Application Layer (5th Layer):** This is the top layer where user applications (e.g., web browsers, email clients) operate, handling high-level protocols like HTTP, FTP, SMTP, and DNS. It deals with data formatting and presentation.
+
+2. **Transport Layer (4th Layer):** Responsible for host-to-host communication and end-to-end data transfer, this layer determines how much data to send, at what rate, and where. It primarily uses TCP (Transmission Control Protocol) for reliable, connection-oriented data transfer, or UDP (User Datagram Protocol) for fast, connectionless transmission.
+
+3. **Network/Internet Layer (3rd Layer):** Handles routing packets across different networks, ensuring they reach their destination using IP addresses. The primary protocol is the Internet Protocol (IP), which defines packet structures, encapsulates data, and determines the best path for data using routers.
+
+4. **Link/Data Link Layer (2nd Layer):** Manages data transfer between neighboring network nodes (within the same network segment). It defines how data is formatted for transmission over physical media, such as Ethernet, and maps IP addresses to physical MAC addresses.
+
+5. **Physical Layer (1st Layer):** The lowest layer responsible for the actual, raw transmission of data (bits) over physical, hardware-level media, such as cables, fiber optics, or radio waves (Wi-Fi)
+
+---
+
 #### 1.8. Cerf and Khan’s Internetworking Principles
 
 > _**Vint Cerf** and **Bob Kahn** formulated the fundamental principles of internetworking in **1973–1974**_
@@ -331,6 +349,23 @@ Here are the key Internetworking Principles established by Cerf and Kahn:
     - Unified Addressing System
     - Gateways/Routers
     - Fragmentation
+
+---
+
+#### 1.9. Reference Models: OSI and TCP/IP
+
+<p align="center"><img alt="Reference Models: OSI and TCP/IP" src="../assets/images/osi-tcp.webp"/><br><i>figure 1.9: Reference Models: OSI and TCP/IP</i></p>
+
+| OSI Model                                                                                 | TCP/IP Model                                                                |
+| :---------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------- |
+| **7 layers:** Physical, Data Link, Network, Transport, Session, Presentation, Application | **5 layers:** Physical, Data Link, Network/Internet, Transport, Application |
+| Separate Session layer manages connections/synchronization                                | No separate Session layer; handled in Application layer                     |
+| Presentation layer handles data formatting/encryption                                     | Data formatting/encryption done within Application layer                    |
+| Theoretical model developed by ISO for standardization                                    | Practical model developed by DoD for Internet use                           |
+| Each layer strictly independent with clear interfaces                                     | Layers more integrated, less strict boundaries                              |
+| No specific protocols defined, just functions                                             | Defines specific protocols: TCP, UDP, IP, HTTP, etc.                        |
+| Used as reference for teaching/network design                                             | Actual protocol stack used by Internet globally                             |
+| Developed before widespread Internet use                                                  | Developed specifically for ARPANET/Internet implementation                  |
 
 #### 1.10. End-to-end Communication
 
@@ -820,6 +855,120 @@ DNS records are instructions within a DNS zone file that map domain names to IP 
 
 ---
 
+#### 2.16. FTP
+
+The File Transfer Protocol (**FTP**) is a standard communication protocol used for the transfer of computer files from a server to a client on a computer network.
+
+- FTP is built on a client–server model architecture using separate control and data connections between the client and the server.
+
+- FTP is considered **insecure**, as data and credentials are sent in clear text. Modern alternatives include SFTP or FTPS.
+
+- Files can be transferred in **ASCII** (text) or **Binary mode** (executable files, images).
+
+<p align="center"><img alt="FTP moves files between local and remote file systems" src="../assets/images/ftp-01.jpg"/><br><i>figure 2.16.1: FTP moves files between local and remote file systems</i></p>
+
+<ins><strong>Working Principle:</strong></ins>
+
+<p align="center"><img alt="FTP working principle" src="../assets/images/ftp-02.jpg"/><br><i>figure 2.16.2: FTP working principle</i></p>
+
+- **Client-Server Model:** An FTP client (_e.g., FileZilla_) connects to an FTP server, requesting access via user credentials or anonymously.
+
+- **Two-Channel Architecture:**
+    - **Control Connection (Port 21):** Stays open throughout the session to handle commands (e.g., login, file navigation) and responses.
+
+    - **Data Connection (Port 20 or dynamic):** Opens only when a file is transferred and closes immediately after.
+
+- **Transfer Modes:**
+    - **Active Mode:** The client tells the server which port to connect to; the server initiates the data connection from its port 20.
+
+    - **Passive Mode (PASV):** The server tells the client which port to connect to; the client initiates the data connection, which is better for navigating firewalls.
+
+<ins><strong>Components:</strong></ins>
+
+- FTP Client
+- FTP Server
+- Control Connection (Persistent)
+- Data Connection (Temporary)
+- Authentication Mechanism
+
+<ins><strong>Commands:</strong></ins>
+
+- USER username
+- PASS password
+- LIST
+- RETR filename (`GET`)
+- STOR filename (`PUT`)
+
+<ins><strong>Common Responses:</strong></ins>
+
+```
+331 Username OK, password required
+125 Data connection already open; transfer starting
+425 Can't open data connection
+452 Error writing file
+```
+
+---
+
+#### 2.17. IP Addressing
+
+> _An IP address is a logical numerical identifier assigned to a device in a network. It allows devices to locate and communicate with each other._
+
+IPv4 addresses use 32 bits and are written in dotted decimal notation.
+
+<p align="center"><img alt="IPv4 Addressing Format" src="../assets/images/ipv4-add-fm.png"/><br><i>figure 2.17: IPv4 Addressing Format</i></p>
+
+```
+Example: 192.168.1.1
+Each octet ranges from 0 to 255.
+```
+
+IPv4 addresses are divided into classes. Each class has a **default subnet mask**.
+
+- Class A (**1–126**),
+- Class B (**128–191**),
+- Class C (**192–223**)
+
+| Class | First Octet Range | Default Subnet Mask                   | Purpose               |
+| :---- | :---------------- | :------------------------------------ | :-------------------- |
+| A     | 0 – 127           | 255.0.0.0 (network bits: **/8**)      | Large networks        |
+| B     | 128 – 191         | 255.255.0.0 (network bits: **/16**)   | Medium networks       |
+| C     | 192 – 223         | 255.255.255.0 (network bits: **/24**) | Small networks        |
+| D     | 224 – 239         | N/A                                   | Multicast             |
+| E     | 240 – 255         | N/A                                   | Experimental/Research |
+
+- **Subnet Mask:** A subnet mask determines the network and host portion of an IP address. It helps devices identify whether another device is on the same network.
+
+- **Default Gateway:** The default gateway is the router interface IP address. It allows devices to send data outside their local network.
+
+- **Subnetting:** Subnetting is the process of dividing a large IP network into smaller logical networks called subnets. Each subnet allows devices to communicate efficiently, improving network performance, security, and manageability.
+
+---
+
+#### 2.18. Cryptographic Components
+
+Cryptography is the science of protecting information by transforming it into an unreadable form so that only authorized parties can understand it.
+
+**The basic principles are:**
+
+- **Confidentiality:** Ensures that information is accessible only to authorized users (achieved using encryption)
+
+- **Integrity:** Ensures that data is not altered during transmission or storage.
+
+- **Authentication:** Verifies the identity of the sender and receiver of information.
+
+- **Non-repudiation:** Prevents a sender from denying that they sent a message.
+
+**Casear Ciphers:**
+
+The action of a Caesar cipher is to replace each plaintext letter with a different one a fixed number of places down the alphabet.
+
+- **Poly-alphabetic Cipher:** A poly-alphabetic cipher uses multiple substitution alphabets. Each character is encrypted using a different Caesar cipher key, based on a repeating pattern.
+
+- **Mono-alphabetic Cipher:** A monoalphabetic cipher is a substitution technique where each character of plaintext is consistently mapped to a single, fixed ciphertext character throughout the entire message.
+
+---
+
 #### 3.1. TCP vs UDP
 
 **Transmission Control Protocol (TCP):** A reliable, connection-oriented transport protocol that ensures accurate and ordered data delivery. It uses control mechanisms to guarantee data correctness, which makes it slower but dependable.
@@ -987,5 +1136,3 @@ TCP Slow Start is a foundational TCP congestion control algorithm that prevents 
 <p align="center"><img alt="TCP Slow Start" src="../assets/images/tcp-slow-start.png"/><br><i>figure 4.7: TCP Slow Start</i></p>
 
 ---
-
-### Mathematical Questions

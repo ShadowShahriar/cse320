@@ -25,7 +25,6 @@ Course offered by,
     - [Full Forms](https://shadowshahriar.github.io/cse320/theory/#full-forms)
     - [Definitions](https://shadowshahriar.github.io/cse320/theory/#definitions)
     - [Theoretical Questions](https://shadowshahriar.github.io/cse320/theory/#theoretical-questions)
-    - [Mathematical Questions](https://shadowshahriar.github.io/cse320/theory/#mathematical-questions)
 
 ## Class Notes
 
