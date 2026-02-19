@@ -47,14 +47,14 @@
         - [Peer-to-Peer Model](#22-peer-to-peer-model)
         - [Sockets](#23-sockets)
         - [IP Addressing Method](#24-ip-addressing-method)
-        - Web (HTTP) Protocol
-        - HTTP Connection Types
-        - HTTP Request Methods
-        - HTTP Response Codes
-        - Maintaining User/Server States (Cookies)
-        - Components of Cookies
-        - Cookie Mechanism
-        - Web Caching (Proxy Servers) with Example
+        - [Web (HTTP) Protocol](#25a-web-http-protocol)
+        - [HTTP Connection Types](#25b-http-connection-types)
+        - [HTTP Request Methods](#25c-http-request-methods)
+        - [HTTP Response Codes](#25d-http-response-codes)
+        - [Maintaining User/Server States (Cookies)](#26a-cookies)
+        - [Components of Cookies](#26b-components-of-cookies)
+        - [Cookie Mechanism](#26c-cookie-mechanism)
+        - [Web Caching (Proxy Servers) with Example](#27a-web-caching)
         - Conditional GET
         - Mitigating HOL Blocking (HTTP/2)
         - SMTP and its Components
@@ -465,6 +465,174 @@ IP addressing is a method of assigning unique numerical labels to devices for id
 - **Loopback Address (127.0.0.1)**: Used by a computer to test its own network interface.
 - **Default Gateway (0.0.0.0)**: Represents an unknown or default network target.
 - **Automatic Private IP Addressing (APIPA)**: Assigned automatically (_169.254.0.1_ to _169.254.254.254_) if DHCP fails.
+
+---
+
+#### 2.5A. Web (HTTP) Protocol
+
+The Hypertext Transfer Protocol (**HTTP**) is an application-layer protocol designed for transmitting hypermedia documents, such as HTML, acting as the foundation of data exchange on the World Wide Web.
+
+- **Protocol Function:** It facilitates the loading of web pages, images, videos, and scripts, often utilizing **port 80**.
+
+- **Request-Response Cycle:** A client sends a request (_e.g., GET_) to a server, which processes it and sends back a response, including a status code (_e.g., 200 OK_).
+
+- **Stateless Nature:** HTTP is stateless, meaning the server does not retain information about the client between requests.
+
+- **Components of HTTP:**
+    - **Requests:** Contain methods (GET, POST), URI, HTTP version, headers, and body.
+    - **Responses:** Include a status line (version, status code, message), headers, and the entity body.
+    - **Methods:** Common methods include,
+        - GET (retrieve data),
+        - POST (submit data),
+        - PUT (update data), and
+        - DELETE (remove data)
+
+#### 2.5B. HTTP Connection Types
+
+Mainly two types:
+
+1. **Persistent HTTP (HTTP/1.1+):** The connection remains open, waiting for more data, which saves time.
+
+2. **Non-persistent HTTP (HTTP/1.0):** The connection closes immediately after the object is received, which may require parallel connections to be efficient.
+
+| Feature      | Persistent (Keep-Alive)    | Non-persistent          |
+| :----------- | :------------------------- | :---------------------- |
+| Connections  | 1 TCP for multiple objects | 1 TCP per object        |
+| Handshake    | Once for all requests      | Every request           |
+| Latency      | Low (1 RTT for multiple)   | High (2 RTT per object) |
+| HTTP Version | Default in 1.1+            | Primarily 1.0           |
+| Efficiency   | High, low overhead         | Low, high overhead      |
+
+#### 2.5C. HTTP Request Methods
+
+The most common HTTP methods, often mapping to **CRUD** (Create, Read, Update, Delete) operations, are:
+
+- `GET`
+
+    Retrieves a representation of the specified resource. `GET` requests should only be used for reading data and are considered _safe_ meaning they do not modify the server's state. **Idempotent** and **Cacheable**.
+
+- `POST`
+
+    Submits data to be processed to a specified resource, typically resulting in the creation of a new resource. **Non-idempotent** meaning **repeating an identical POST request may create duplicate resources**.
+
+- `PUT`
+
+    Replaces all current representations of the target resource with the content provided in the request body. If the resource does not exist, the server may create it. **Idempotent**, **ensuring that multiple identical requests result in the same server state**.
+
+- `PATCH`
+
+    Applies partial modifications to a resource. This method is more efficient than PUT for minor updates as it only sends the data that needs to be changed, not the entire resource representation. **Not necessarily idempotent**.
+
+- `DELETE`
+
+    Removes the specified resource. This method is also **idempotent**, **as the resource will remain deleted even if the request is repeated**.
+
+| Method   | Feature                          |
+| :------- | :------------------------------- |
+| `GET`    | **Idempotent** and **Cacheable** |
+| `POST`   | **Non-idempotent**               |
+| `PUT`    | **Idempotent**                   |
+| `PATCH`  | **Not necessarily idempotent**   |
+| `DELETE` | **Idempotent**                   |
+
+> _An HTTP method is **idempotent** if the intended effect on the server of making a single request is the same as the effect of making several identical requests._
+
+#### 2.5D. HTTP Response Codes
+
+HTTP response status codes are three-digit numbers sent by a server to indicate the status of a client's request. These codes are grouped into **five categories** based on their first digit:
+
+- **1XX**: Informational
+- **2XX**: Success
+- **3XX**: Redirection
+- **4XX**: Client Error
+- **5XX**: Server Error
+
+**Common HTTP Response Codes:**
+
+- **200 OK:** request succeeded, requested object later in this message.
+- **301 Moved Permanently:** requested object moved, new location specified in the `location` field.
+- **400 Bad Request:** request message was not understood by the server.
+- **404 Not Found:** requested document not found on this server.
+- **505 HTTP Version Not Supported**
+
+---
+
+#### 2.6A. Cookies
+
+An HTTP cookie is a **small text file** sent by a web server to a user's browser, enabling websites to store stateful information (like login status or shopping cart items) on the client-side, **overcoming HTTP's native statelessness**. Cookies are used for session management, personalization, and tracking, typically stored for a set duration.
+
+Cookies are generally limited to **4KB in size**.
+
+#### 2.6B. Components of Cookies
+
+- **Name-Value Pair:** The core data, identifying the cookie (_e.g., session_id=abc123_).
+- **Domain:** Specifies which hosts can receive the cookie.
+- **Path:** Restricts the cookie to specific URL paths (e.g., /app).
+- **Expires/Max-Age:** Determines the lifetime. Without these, it is a session cookie deleted upon closing the browser.
+- **Secure:** Ensures the cookie is sent only over HTTPS.
+- **HttpOnly:** Prevents client-side scripts (JavaScript) from accessing the cookie.
+- **SameSite:** Mitigates CSRF attacks by controlling if cookies are sent with cross-site requests (values: **Lax, Strict, None**)
+- **Partition Key:** Used for modern, partitioned cookies (CHIPS)
+
+#### 2.6C. Cookie Mechanism
+
+<p align="center"><img alt="Cookies" src="../assets/images/cookies.png"/><br><i>figure 2.6C: Cookie Mechanism</i></p>
+
+1. The server sends a `Set-Cookie` header in the HTTP response.
+2. The browser saves the cookie.
+3. For subsequent requests to the same domain, the browser sends the cookie back in the `Cookie` header.
+
+#### 2.7A. Web Caching
+
+A web cache is a technology that temporarily stores copies of website data, such as HTML, images, and JavaScript, closer to the user to accelerate page loading speeds, reduce server load, and minimize bandwidth usage.
+
+- By storing frequently accessed content, it eliminates the need to fetch data from the original server repeatedly.
+
+- Common types of web cache include browser, proxy, and CDN caches, all designed to make the web faster.
+
+#### 2.7B. Web Caching with Proxy Servers
+
+A web cache proxy server is an intermediary server that stores copies of frequently accessed web content (like images, documents, and web pages) to fulfill future requests faster.
+
+When a user requests a website, the proxy checks if it has a stored copy. If yes, it serves the cached data instantly. If not, it fetches the data from the origin server, saves a copy for future use, and passes it to the user.
+
+<p align="center"><img alt="Proxy Servers" src="../assets/images/proxy.jpg"/><br><i>figure 2.7A: Web Caching with Proxy Servers</i></p>
+
+**Types of Proxy Caching:**
+
+- **Forward Proxy Cache:** Sits in front of clients, often in a LAN, to cache internet content for users.
+- **Reverse Proxy Cache (CDN):** Sits in front of a web server to store static content, reducing load on the origin server and speeding up content delivery to users.
+
+#### 2.7C. Web Caching Example
+
+<ins><strong>Scenario:</strong></ins>
+
+- Access Link Rate: **1.54 Mbps**
+- RTT from router to server: **2.01 sec**
+- Web object size: **100 Kb**
+- Average request rate from browsers to origin servers: **15 per sec**
+- Average data rate to browsers: **1.50 Mbps**
+
+<ins><strong>Performance:</strong></ins>
+
+Suppose cache hit rate is **0.4**.
+
+- 40% requests served by cache, with low delay,
+- 60% requests satisfied at origin.
+
+```
+Data rate to browsers over access link,
+        0.6 * 1.50 Mbps = 0.9 Mbps
+
+Access link utilization,
+        0.9 / 1.54 = .58 (low queueing delay)
+
+Average end-to-end delay:
+        0.6 * (delay from origin servers) +
+        0.4 * (delay when satisfied at cache)
+    =   0.6 (2.01) + 0.4
+    ~   1.2 sec
+```
 
 ---
 
