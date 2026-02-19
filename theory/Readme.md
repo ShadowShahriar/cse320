@@ -33,14 +33,14 @@
         - [Packet Switching vs Circuit Switching](#12-packet-switching-vs-circuit-switching)
         - [Four Types of E2E Delays](#13-four-types-of-e2e-delays)
         - [Packet Interception](#14-packet-interception)
-        - DDoS Attack
-        - Why Layering is Required in Networking?
+        - [DDoS Attack](#15-ddos-attack)
+        - [Why Layering is Required in Networking?](#16-why-layering-is-required-in-networking)
         - Elaborate Internet Protocol Stack
-        - Cerf and Khan’s Internetworking Principles
+        - [Cerf and Khan’s Internetworking Principles](#18-cerf-and-khans-internetworking-principles)
         - Reference Models: OSI, ISO, TCP/IP
-        - End-to-End Communication
-        - E2E Throughput
-        - Why do packet loss and delay occur?
+        - [End-to-End Communication](#110-end-to-end-communication)
+        - [End-to-End Throughput](#111-end-to-end-throughput)
+        - [Why do packet loss and delay occur?](#112-why-do-packet-loss-and-delay-occur)
 
     - **Chapter II**
         - Client-Server Model
@@ -272,5 +272,97 @@ Also known as **packet sniffing**, packet interception the act of capturing, mon
 - **Secured Infrastructure:** Using secure switches and disabling unused ports to prevent unauthorized monitoring.
 
 ---
+
+#### 1.5. DDoS Attack
+
+A Distributed Denial of Service (**DDOS**) attack is a malicious attempt to disrupt a server, service or network by overwhelming it with a flood of internet traffic from multiple, _often compromised_ sources (a botnet).
+
+- **Working Principle:** Attackers use malware to infect devices, turning them into **bots**. A message network of these bots then turn into a **botnet**, and are instructed to send requests to a specific target's IP address, overwhelming the server's capacity.
+
+- **Consequence:** It renders online services inaccessible to legitimate users, causing downtime and revenue loss.
+
+- **Mitigation:** Protection involves -
+    - using CDNs,
+    - increasing bandwidth,
+    - implementing rate limiting, and
+    - using cloud-based scrubbing centers to filter traffic.
+
+---
+
+#### 1.6. Why Layering is Required in Networking?
+
+> _Layering in a network is necessary to reduce the complexity of the communication process and to provide modularity._
+
+Communication over a network involves many functions such as addressing, routing, error control, data formatting, and session management. If all these functions were handled together as a monolithic design, it would become extremely difficult to manage, troubleshoot, or update.
+
+Layering divides the communication process into a series of distinct steps, each handled by a different layer. Each layer performs a specific set of functions and interacts with the layers directly above and below it. This abstraction simplifies the design and implementation of network protocols, promotes interoperability, and allows different technologies to coexist and evolve independently.
+
+---
+
+#### 1.8. Cerf and Khan’s Internetworking Principles
+
+> _**Vint Cerf** and **Bob Kahn** formulated the fundamental principles of internetworking in **1973–1974**_
+
+Here are the key Internetworking Principles established by Cerf and Kahn:
+
+1. **Core Design Principle**
+    - Open-Architecture Networking
+    - Minimalism and Autonomy
+    - Best-Effort Service Model
+    - Stateless Routers (Gateways)
+
+2. **Architectural Principles**
+    - End-to-End Reliability
+    - Unified Addressing System
+    - Gateways/Routers
+    - Fragmentation
+
+#### 1.10. End-to-end Communication
+
+End-to-end (E2E) communication is a networking principle where data is transmitted directly from the source to the destination without intervention from intermediate nodes.
+
+- End-to-end connectivity ensures a seamless, uninterrupted connection often using acknowledgement messages (ACK) to confirm data receipt.
+
+- This approach places responsibility for functionality (reliability, security) at the network's endpoints rather than in the core.
+
+- **Example:** An arbitrarily reliable file transfer between two endpoints in a distributed network.
+
+- **Limitation:** The most important limitation of the end-to-end principle is that its basic premise, place functions in the application endpoints rather than in the intermediary node, which is hard to implement properly.
+
+---
+
+#### 1.11. End-to-End Throughput
+
+End-to-end throughput is the total rate of successful data transfer (bits/second) from source to destination across a network path, typically determined by the bottleneck link along that path.
+
+<pre>
+Throughput = min(<i>R<sub>1</sub></i>, <i>R<sub>2</sub></i>, ..., <i>R<sub>n</sub></i>)
+</pre>
+
+- When _**N**_ connections share a link (**R**), the throughput per connection is **R / N**.
+
+- **Instantaneous throughput** measures the rate at a specific moment, while **average throughput** calculates it over a sustained period.
+
+- **Example:** The lower of the server's upload speed or the client's download speed often acts as the bottleneck (end-to-end throughput)
+
+<ins><strong>Factors affecting throughput:</strong></ins>
+
+- **Wireless Interference:** Hidden nodes and simultaneous transmissions.
+- **Protocol Overhead:** TCP/IP headers and acknowledgments.
+- **Network Congestion:** High traffic load can lead to packet loss and retransmissions.
+
+---
+
+#### 1.12. Why do packet loss and delay occur?
+
+- **Network Congestion:** During peak hours, data traffic exceeds network capacity, leading to queuing delays and dropped packets.
+
+- **Hardware/Software Issues:** Outdated firmware, overheated routers, or faulty cables can fail to process packets, causing them to be lost or delayed.
+
+- **Wireless Signal Interference:** Physical obstructions or electromagnetic interference can corrupt data packets in Wi-Fi, resulting in packet loss.
+
+- **Buffer Overflows:** When a network device receives more data than its memory buffer can hold, it drops incoming packets.
+
+- **Routing/Configuration Errors:** Misconfigured network devices can cause packets to loop or be dropped.
 
 ### Mathematical Questions
