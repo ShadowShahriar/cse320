@@ -75,15 +75,14 @@
         - [TCP Segment Structure](#33-tcp-segement-structure)
 
     - **Chapter IV**
-        - IPv4 Packet Structure
-        - IPv6 Packet Structure
-        - What happens when TTL is zero?
-        - What is a fragment?
-        - Explain each field in IP Datagram (v4, v6)
-        - IPv6 Flow Label
-        - TCP Congestion Control: AIMD
-        - Why is AIMD used?
-        - TCP Slow Starts
+        - [IPv4 Packet Structure](#41-ipv4-packet-structure)
+        - [IPv6 Packet Structure](#42-ipv6-packet-structure)
+        - [What happens when TTL is zero?](#43-what-happens-when-ttl-is-zero)
+        - [What is a fragment?](#44-what-is-a-fragment)
+        - [IPv6 Flow Label](#45-ipv6-flow-label)
+        - [TCP Congestion Control: AIMD](#46a-tcp-congestion-control-aimd)
+        - [Why is AIMD used?](#46b-why-is-aimd-used)
+        - [TCP Slow Start](#47-tcp-slow-start)
 
 3. [**Mathematical Questions**](#mathematical-questions)
     - Packet Queueing Delay
@@ -118,6 +117,10 @@
 | TCP          | Transmission Control Protocol             |
 | UDP          | User Datagram Protocol                    |
 | MSS          | Maximum Segment Size                      |
+| MTU          | Maximum Transmission Unit                 |
+| ToS          | Type of Service                           |
+| QoS          | Quality of Service                        |
+| IHL          | Internet Header Length                    |
 
 ### Definitions
 
@@ -541,6 +544,95 @@ A TCP segment consists of a **20–60 byte header** followed by application data
 
 - **Header:** 20 bytes **(mandatory)** up to 60 bytes **(with options)**.
 - **Payload (Data):** The actual application data being transferred.
+
+---
+
+#### 4.1. IPv4 Packet Structure
+
+An IPv4 packet consists of a **20-60 byte header** followed by a variable-length data payload.
+
+<p align="center"><img alt="IPv4" src="../assets/images/ipv4.png"/><br><i>figure 4.1: IPv4 Packet Structure</i></p>
+
+- **Version (4 bits):** Indicates the IP version, set to 4 for IPv4.
+- **Internet Header Length (IHL) (4 bits):** Specifies the header size in 32-bit words; typically 5 (20 bytes).
+- **Type of Service/DSCP (8 bits):** Used for traffic prioritization and quality of service.
+- **Total Length (16 bits):** Entire packet size (header + payload) in bytes, up to 65,535 bytes.
+- **Identification (16 bits):** Used to identify fragments of a single IP datagram.
+- **Flags (3 bits):** Controls fragmentation (e.g., Don't Fragment, More Fragments).
+- **Fragment Offset (13 bits):** Indicates the position of a fragment in the original packet.
+- **Time to Live (TTL) (8 bits):** Prevents routing loops by decrementing at each hop; packet dies at 0.
+- **Protocol (8 bits):** Identifies the upper-layer protocol (e.g., TCP=6, UDP=17).
+- **Header Checksum (16 bits):** Validates the integrity of the header.
+- **Source IP Address (32 bits):** The IPv4 address of the sender.
+- **Destination IP Address (32 bits):** The IPv4 address of the receiver.
+- **Options (Optional, 0-40 bytes):** Rarely used fields for network testing or security.
+
+---
+
+#### 4.2. IPv6 Packet Structure
+
+An IPv6 packet consists of a mandatory **40-byte (320-bit) fixed header**, optional extension headers, and the upper-layer payload (e.g., TCP/UDP).
+
+<p align="center"><img alt="IPv6" src="../assets/images/ipv6.png"/><br><i>figure 4.2: IPv6 Packet Structure</i></p>
+
+- **Version (4 bits):** Set to 6 to indicate IPv6.
+- **Traffic Class (8 bits):** Used for QoS, similar to IPv4's Type of Service (ToS) field.
+- **Flow Label (20 bits):** Identifies specific traffic flows to assist routers in handling packets.
+- **Payload Length (16 bits):** Length of the payload in bytes (excluding the 40-byte header)
+- **Next Header (8 bits):** Identifies the type of header immediately following the IPv6 header (e.g., TCP, UDP, or an extension header)
+- **Hop Limit (8 bits):** Decremented by 1 at each router; if it reaches 0, the packet is discarded (_replaces IPv4 TTL_)
+- **Source Address (128 bits):** The IPv6 address of the originator.
+- **Destination Address (128 bits):** The IPv6 address of the recipient.
+
+---
+
+#### 4.3. What happens when TTL is zero?
+
+When the Time to Live (**TTL**) value of an IP packet reaches zero, the router currently handling the packet discards it to prevent it from looping endlessly in the network. After discarding the packet, the router typically sends an ICMP `"Time Exceeded"` message back to the original sender to notify them of the packet expiration.
+
+Essentially, a TTL of zero acts as a safety mechanism to ensure network health by destroying "lost" or stuck data packets.
+
+---
+
+#### 4.4. What is a fragment?
+
+A fragment in networking is a smaller piece of a larger data packet, created when the original packet exceeds the
+Maximum Transmission Unit (MTU) of a network link. Routers or sending devices break packets into fragments to pass through networks with smaller size limitations. Each fragment contains a portion of the original data, a header, and an offset to allow for reassembly at the destination.
+
+> _Sending a 2000-byte IP packet over an Ethernet network with a 1500-byte MTU requires fragmentation._
+
+---
+
+#### 4.5. IPv6 Flow Label
+
+The IPv6 Flow Label is a 20-bit field in the IPv6 header (defined in **RFC 6437**) used to tag sequences of packets, such as voice calls or video streams, that require special handling, like specific Quality of Service (QoS) or path routing.
+
+It allows routers to efficiently classify and process traffic flows without examining higher-layer headers.
+
+<p align="center"><img alt="IPv6 Flow Label" src="../assets/images/ipv6-flow.png"/><br><i>figure 4.5: IPv6 Flow Label</i></p>
+
+#### 4.6A. TCP Congestion Control: AIMD
+
+TCP Congestion Control using Additive Increase/Multiplicative Decrease (**AIMD**) is a feedback mechanism where the congestion window (_cwnd_) increases linearly by one Maximum Segment Size (**MSS**) per Round Trip Time (**RTT**) in the absence of congestion, and is reduced by half (0.5 × _cwnd_) upon detecting packet loss.
+
+<p align="center"><img alt="AIMD" src="../assets/images/aimd.png"/><br><i>figure 4.6: TCP Congestion Control using AIMD</i></p>
+
+This "sawtooth" pattern allows TCP to probe for bandwidth, quickly scale back to avoid network collapse, and ensure fairness among multiple flows.
+
+#### 4.6B. Why is AIMD used?
+
+- **Congestion Control:** It prevents the network from becoming overloaded by reducing the sending rate (often halving the congestion window) when packet loss is detected.
+- **Fairness and Stability:** Multiple network flows using AIMD will converge to a stable, shared usage of the available bandwidth, promoting fairness.
+- **Efficiency:** By slowly increasing the rate, it probes for available bandwidth, maximizing network utilization.
+- **Robustness:** It is a decentralized, adaptive mechanism that works well in dynamic, changing network environments.
+
+---
+
+#### 4.7. TCP Slow Start
+
+TCP Slow Start is a foundational TCP congestion control algorithm that prevents network overload by starting data transmission with a small congestion window (_cwnd_) and increasing it exponentially for every received ACK.
+
+<p align="center"><img alt="TCP Slow Start" src="../assets/images/tcp-slow-start.png"/><br><i>figure 4.7: TCP Slow Start</i></p>
 
 ---
 
