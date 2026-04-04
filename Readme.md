@@ -54,7 +54,18 @@ Course offered by,
 - [**Lab 02**](#lab-reports): 12 January (❌ Dropped)
 - [**Lab 03**](https://shadowshahriar.github.io/cse320/lab/2026-01-19/report.pdf): 19 January &#124; [**Docs**](https://docs.google.com/document/d/1wIlz3SOmLPQLJePKMyZetdjf5tpwhlyx6jbeGpcRfvs/edit?usp=sharing)
 - [**Lab 04**](https://shadowshahriar.github.io/cse320/lab/2026-01-26/report.pdf): 26 January &#124; [**Docs**](https://docs.google.com/document/d/1oFsv8-ozxmrbyxtM7UxTyxKtQRbD3ePcXl1VMo564Ak/edit?usp=sharing)
-- [**Lab 05**](#lab-reports): 02 February &#124; [**Docs**](#lab-reports)
+- [**Lab 05**](https://shadowshahriar.github.io/cse320/lab/2026-02-02/report.pdf): 02 February &#124; [**Docs**](https://docs.google.com/document/d/1dpkprmmNA4n2BWJBElM0jMrSmnU3ATlunYZyjzeMBtY/edit?usp=sharing)
+- [**Lab 06**](https://shadowshahriar.github.io/cse320/lab/2026-02-09/report.pdf): 09 February &#124; [**Docs**](https://docs.google.com/document/d/1Ejlj4SCzFwjIA5Rcn6yunjkXgTTXL2Y1KmA34jn4YXM/edit?usp=sharing)
+- [**Lab 07**](https://shadowshahriar.github.io/cse320/lab/2026-03-30/report.pdf): 30 March &#124; [**Docs**](https://docs.google.com/document/d/13vs602fTccusb0me29rpyIk5hexdM5qfMs0ECSrkV14/edit?usp=sharing)
+- [**Lab 08**](https://shadowshahriar.github.io/cse320/lab/2026-04-06/report.pdf): 06 April &#124; [**Docs**](https://docs.google.com/document/d/1MT3UrNlm6l44lXvWPNTni0OwiVNLroqSt-rJ-1iuDMo/edit?usp=sharing)
+
+## Packet Tracer Project Files
+
+- [**Experiment 02**](https://shadowshahriar.github.io/cse320/lab/cisco/experiment-02.pkt): 19 January &#124; HTTP Web Server Accessing with DNS and FTP Server
+- [**Experiment 03**](https://shadowshahriar.github.io/cse320/lab/cisco/experiment-03.pkt): 26 January &#124; VLAN Configuration
+- [**Experiment 04**](https://shadowshahriar.github.io/cse320/lab/cisco/experiment-04.pkt): 02 February &#124; Static Routing
+- [**Experiment 05**](https://shadowshahriar.github.io/cse320/lab/cisco/experiment-05.pkt): 09 February &#124; RIP Routing Protocol
+- [**Experiment 06**](https://shadowshahriar.github.io/cse320/lab/cisco/experiment-06.pkt): 30 March &#124; Wireless Routing
 
 ## Lab Manual
 
