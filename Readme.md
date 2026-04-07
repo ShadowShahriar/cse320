@@ -47,6 +47,7 @@ Course offered by,
 - [**Class 02**](https://shadowshahriar.github.io/cse320/notes/class-12.pdf): 05 March 2026
 - [**Class 03**](https://shadowshahriar.github.io/cse320/notes/class-13.pdf): 31 March 2026
 - [**Class 04**](https://shadowshahriar.github.io/cse320/notes/class-14.pdf): 02 April 2026
+- [**Class 05**](https://shadowshahriar.github.io/cse320/notes/class-15.pdf): 07 April 2026
 
 ## CT Questions Solve
 
