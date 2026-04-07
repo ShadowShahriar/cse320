@@ -28,6 +28,8 @@ Course offered by,
 
 ## Class Notes
 
+#### Mid Term
+
 - [**Class 01**](https://shadowshahriar.github.io/cse320/notes/class-01.pdf): 06 January 2026
 - [**Class 02**](https://shadowshahriar.github.io/cse320/notes/class-02.pdf): 08 January 2026
 - [**Class 03**](https://shadowshahriar.github.io/cse320/notes/class-03.pdf): 13 January 2026
@@ -38,6 +40,13 @@ Course offered by,
 - **Class 08**: 29 January 2026 (❌ CT break)
 - [**Class 09**](https://shadowshahriar.github.io/cse320/notes/class-09.pdf): 03 February 2026 (Contributed by [**Munasib Maria Oyshi**](https://github.com/BlackPepper404))
 - [**Class 10**](https://shadowshahriar.github.io/cse320/notes/class-10.pdf): 05 February 2026 (EOC)
+
+#### Final Term
+
+- [**Class 01**](https://shadowshahriar.github.io/cse320/notes/class-11.pdf): 03 March 2026
+- [**Class 02**](https://shadowshahriar.github.io/cse320/notes/class-12.pdf): 05 March 2026
+- [**Class 03**](https://shadowshahriar.github.io/cse320/notes/class-13.pdf): 31 March 2026
+- [**Class 04**](https://shadowshahriar.github.io/cse320/notes/class-14.pdf): 02 April 2026
 
 ## CT Questions Solve
 
