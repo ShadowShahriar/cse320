@@ -190,6 +190,7 @@ In both standards, the Blue (Pins 4, 5) and Brown (Pins 7, 8) pairs remain in th
 
 <br>
 <p align="center"><strong>Application Layer Protocols</strong></p>
+<br>
 
 #### 2.1. Explain the distinct roles of **DNS**, **HTTP**, and **FTP** and how they interact to provide network services to an end-user.
 
@@ -221,6 +222,7 @@ To manage these actions securely, administrators perform **User Setup**, which i
 
 <br>
 <p align="center"><strong>Virtual Local Area Networks (VLANs)</strong></p>
+<br>
 
 #### 3.1. Define VLAN and differentiate between Access Links and Trunk Links in terms of their functionality and frame handling.
 
@@ -259,20 +261,20 @@ To configure a trunk link using the **Command Line Interface** (CLI), you must i
 - **Enter Configuration Mode:** Type the following commands to move from user mode to global configuration mode:
 
     ```
-    	enable
-    	config t (or configure terminal)
+    enable
+    config t (or configure terminal)
     ```
 
 - **Select the Interface:** Identify which port connects to the other switch and enter its interface configuration mode. For example, if the switches are connected via port FastEthernet 0/7, you would type:
 
     ```
-    	interface range Fa0/7
+    interface range Fa0/7
     ```
 
 - **Set Mode to Trunk:** Use the switchport command to designate the link as a trunk, which allows it to carry traffic from multiple VLANs using IEEE 802.1Q tagging:
 
     ```
-    	switchport mode trunk
+    switchport mode trunk
     ```
 
 This configuration is essential because, unlike access links which only belong to a single VLAN and carry untagged frames, trunk links are required to pass traffic for all configured VLANs across the network backbone.
@@ -323,6 +325,7 @@ In a Virtual Local Area Network (VLAN) environment, the core differences between
 
 <br>
 <p align="center"><strong>Network Routing Methodologies</strong></p>
+<br>
 
 #### 4.1. Compare Static Routing and RIP (Routing Information Protocol), discussing their mechanisms, metrics, and ideal network environments.
 
@@ -360,6 +363,7 @@ If the neighbor's table shows a path with a lower hop count to a destination, th
 
 <br>
 <p align="center"><strong>Wireless Routing and Security</strong></p>
+<br>
 
 #### 5.1. Discuss the purpose of Wireless Routing and the significance of SSID and WPA2-Personal in its configuration.
 
