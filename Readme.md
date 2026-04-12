@@ -90,6 +90,7 @@ Course offered by,
 - [**Experiment 04**](https://shadowshahriar.github.io/cse320/lab/cisco/experiment-04.pkt): 02 February &#124; Static Routing
 - [**Experiment 05**](https://shadowshahriar.github.io/cse320/lab/cisco/experiment-05.pkt): 09 February &#124; RIP Routing Protocol
 - [**Experiment 06**](https://shadowshahriar.github.io/cse320/lab/cisco/experiment-06.pkt): 30 March &#124; Wireless Routing
+- [**Experiment 06/TA**](https://shadowshahriar.github.io/cse320/lab/cisco/experiment-06-one-hop.pkt): 07 April &#124; Wireless Routing (Single Hop)
 
 ## Lab Manual
 
