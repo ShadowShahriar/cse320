@@ -18,6 +18,14 @@ Course offered by,
 
 > All course materials have been moved to this dedicated [**Google Drive folder**](https://drive.google.com/drive/folders/1v-3MmFGgMZx1Ud-QjGrWOSmQgL9v-UEK?usp=sharing) to avoid GitHub pages size constraints.
 
+## Lab Quick Notes
+
+- [**Final Lab Examination**](https://shadowshahriar.github.io/cse320/lab/)
+    - [Experiments List](https://shadowshahriar.github.io/cse320/lab/#experiments-list)
+    - [Full Forms](https://shadowshahriar.github.io/cse320/lab/#full-forms)
+    - [Refreshers](https://shadowshahriar.github.io/cse320/lab/#refreshers)
+    - [Theoretical Questions](https://shadowshahriar.github.io/cse320/lab/#theoretical-questions)
+
 ## Theory Quick Notes
 
 - [**Mid Term Examination**](https://shadowshahriar.github.io/cse320/theory/#mid-term-examination)
@@ -48,6 +56,7 @@ Course offered by,
 - [**Class 03**](https://shadowshahriar.github.io/cse320/notes/class-13.pdf): 31 March 2026
 - [**Class 04**](https://shadowshahriar.github.io/cse320/notes/class-14.pdf): 02 April 2026
 - [**Class 05**](https://shadowshahriar.github.io/cse320/notes/class-15.pdf): 07 April 2026
+- [**Class 06**](https://shadowshahriar.github.io/cse320/notes/class-16.pdf): 09 April 2026
 
 ## CT Questions Solve
 
@@ -68,6 +77,11 @@ Course offered by,
 - [**Lab 06**](https://shadowshahriar.github.io/cse320/lab/2026-02-09/report.pdf): 09 February &#124; [**Docs**](https://docs.google.com/document/d/1Ejlj4SCzFwjIA5Rcn6yunjkXgTTXL2Y1KmA34jn4YXM/edit?usp=sharing)
 - [**Lab 07**](https://shadowshahriar.github.io/cse320/lab/2026-03-30/report.pdf): 30 March &#124; [**Docs**](https://docs.google.com/document/d/13vs602fTccusb0me29rpyIk5hexdM5qfMs0ECSrkV14/edit?usp=sharing)
 - [**Lab 08**](https://shadowshahriar.github.io/cse320/lab/2026-04-06/report.pdf): 06 April &#124; [**Docs**](https://docs.google.com/document/d/1MT3UrNlm6l44lXvWPNTni0OwiVNLroqSt-rJ-1iuDMo/edit?usp=sharing)
+
+## Assignments
+
+- [**Lab Assignment**](https://shadowshahriar.github.io/cse320/assignment/lab.pdf): 13 April &#124; **Docs**
+- [**Theory Assignment**](https://shadowshahriar.github.io/cse320/assignment/theory.pdf): 16 April &#124; **Docs**
 
 ## Packet Tracer Project Files
 
