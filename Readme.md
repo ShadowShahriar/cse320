@@ -80,7 +80,7 @@ Course offered by,
 
 ## Assignments
 
-- [**Lab Assignment**](https://shadowshahriar.github.io/cse320/assignment/lab.pdf): 13 April &#124; **Docs**
+- [**Lab Assignment**](https://shadowshahriar.github.io/cse320/assignment/lab.pdf): 13 April &#124; [**Docs**](https://docs.google.com/document/d/1FTvr0mzX_WuHlloikP9ghjOJztDKI-mMEOUx71iDqpI/edit?usp=sharing)
 - [**Theory Assignment**](https://shadowshahriar.github.io/cse320/assignment/theory.pdf): 16 April &#124; **Docs**
 
 ## Packet Tracer Project Files
