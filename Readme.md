@@ -57,6 +57,9 @@ Course offered by,
 - [**Class 04**](https://shadowshahriar.github.io/cse320/notes/class-14.pdf): 02 April 2026
 - [**Class 05**](https://shadowshahriar.github.io/cse320/notes/class-15.pdf): 07 April 2026
 - [**Class 06**](https://shadowshahriar.github.io/cse320/notes/class-16.pdf): 09 April 2026
+- **Class 07**: 14 April 2026 (❌ Class off)
+- [**Class 08**](https://shadowshahriar.github.io/cse320/notes/class-17.pdf): 16 April 2026
+- **Class 09**: 21 April 2026 (EOC)
 
 ## CT Questions Solve
 
@@ -81,7 +84,7 @@ Course offered by,
 ## Assignments
 
 - [**Lab Assignment**](https://shadowshahriar.github.io/cse320/assignment/lab.pdf): 13 April &#124; [**Docs**](https://docs.google.com/document/d/1FTvr0mzX_WuHlloikP9ghjOJztDKI-mMEOUx71iDqpI/edit?usp=sharing)
-- [**Theory Assignment**](https://shadowshahriar.github.io/cse320/assignment/theory.pdf): 16 April &#124; **Docs**
+- [**Theory Assignment**](https://shadowshahriar.github.io/cse320/assignment/theory.pdf): 16 April &#124; [**Docs**](https://docs.google.com/document/d/1--DWq_9HBuTZ2HGOnen_EsS3L2ZyZsiyKM5PrpfWBxc/edit?usp=sharing)
 
 ## Packet Tracer Project Files
 
