@@ -59,7 +59,7 @@ Course offered by,
 - [**Class 06**](https://shadowshahriar.github.io/cse320/notes/class-16.pdf): 09 April 2026
 - **Class 07**: 14 April 2026 (❌ Class off)
 - [**Class 08**](https://shadowshahriar.github.io/cse320/notes/class-17.pdf): 16 April 2026
-- **Class 09**: 21 April 2026 (EOC)
+- [**Class 09**](https://shadowshahriar.github.io/cse320/notes/class-18.pdf): 21 April 2026 (EOC)
 
 ## CT Questions Solve
 
