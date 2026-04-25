@@ -101,11 +101,11 @@
         - [WiMax]()
 
     - [**Chapter 8: Network Security**](#chapter-8)
-        - [Explain Asymmetric Cryptography]()
-        - [Explain Symmetric Cryptography]()
-        - [What is RSA?]()
-        - [How does RSA encryption work?]()
-        - [How does RSA content is decrypted?]()
+        - [Explain Asymmetric Cryptography](#81-explain-asymmetric-cryptography)
+        - [Explain Symmetric Cryptography](#82-explain-symmetric-cryptography)
+        - [What is RSA?](#83-what-is-rsa)
+        - [How does RSA encryption work?](#84-how-does-rsa-encryption-work)
+        - [How does RSA content is decrypted?](#85-how-does-rsa-content-is-decrypted)
 
 3. [**Mathematical Questions**](#mathematical-questions)
     - [IP Addressing](#91-subnetting)
@@ -536,6 +536,56 @@ VLSM optimizes space by subnetting again, applying smaller masks for smaller nee
 #### Chapter 7
 
 #### Chapter 8
+
+#### 8.1. Explain Asymmetric Cryptography
+
+Asymmetric cryptography, or public-key cryptography, uses a linked pair of keys: a public key (freely distributed) and a private key (kept secret) to encrypt and decrypt data, solving key distribution issues inherent in symmetric systems.
+
+**Example:** A user signs a document with their private key, allowing anyone to verify authenticity using the sender's public key.
+
+---
+
+#### 8.2. Explain Symmetric Cryptography
+
+Symmetric Cryptography is a security method using a single, shared secret key to both encrypt and decrypt data, ensuring fast, efficient, and confidential communication.
+
+It is generally much faster than asymmetric encryption, making it ideal for encrypting large volumes of data. Used in encrypting files, folders, and hard drives (e.g., _BitLocker_).
+
+---
+
+#### 8.3. What is RSA?
+
+RSA stands for Rivest–Shamir–Adleman, a widely used asymmetric public-key cryptosystem developed in 1977 for secure data transmission. It uses a public key for encryption and a private key for decryption, based on the mathematical difficulty of factoring large prime numbers. Common uses include SSL/TLS certificates, email encryption, and digital signatures.
+
+<p align="center"><img alt="RSA" src="../../assets/images/rsa.png"/><br><i>figure 8.3: RSA Mechanism</i></p>
+
+---
+
+#### 8.4. How does RSA encryption work?
+
+- **Key Generation:** Two large prime numbers, `p` and `q`, are selected and multiplied to create a modulus `n = p * q`. A public exponent `e` and a private exponent `d` are generated based on these numbers.
+- **Public Key:** `(n, e)` is shared openly.
+- **Private Key:** `(n, d)` is kept secret.
+- **Encryption:** The sender converts the message into a number `M` and calculates the ciphertext `C = M ^ e (mod n)`.
+- **Decryption:** The recipient computes the original message `M = C ^ d (mod n)`.
+
+---
+
+#### 8.5. How does RSA content is decrypted?
+
+RSA content is decrypted using a private key that corresponds to the public key used for encryption.
+
+- **Possession of the Private Key:** Decryption requires the private key exponent (`d`) and the modulus (`n`). The private key must be kept secret by the recipient.
+
+- **Mathematical Formula:** The ciphertext (`C`) is decrypted to obtain the original plaintext message (`M`) using the formula:
+
+    ```
+    M = C ^ d (mod n)
+    ```
+
+- **Modular Exponentiation:** The recipient computes this value, often using efficient methods like the _Remainder Theorem_ to speed up the calculation.
+
+---
 
 ### Mathematical Questions
 
