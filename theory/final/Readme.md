@@ -58,7 +58,7 @@
     - Ad Hoc Network
 
 2. [**Theoretical Question**](#theoretical-questions)
-    - **Chapter 4: IP Addressing and Subnetting**
+    - [**Chapter 4: IP Addressing and Subnetting**](#chapter-4)
         - [IP Address Structure](#41-ip-address-structure)
         - [IP Address Types](#42-ip-address-types)
         - [IP Address Classes](#43-ip-address-classes)
@@ -75,12 +75,12 @@
         - [VLSM vs FLSM](#414-vslm-vs-flsm)
         - [Example of VLSM and FLSM](#415-example-of-vlsm-and-flsm)
 
-    - **Chapter 5: Routing Protocols**
-        - [Routing Protocol Classification](#B)
+    - [**Chapter 5: Routing Protocols**](#chapter-5)
+        - [Routing Protocol Classification](#51-routing-protocol-classification)
         - [Dijkstra's Link State Routing Algorithm]()
         - [Distance Vector Algorithm]()
 
-    - **Chapter 7: Wireless and Mobile Networks**
+    - [**Chapter 7: Wireless and Mobile Networks**](#chapter-7)
         - [Flooding: Pros and Cons](#B)
         - [Flooding: Broadcast Storm]()
         - [Flooding: Spanning Tree Broadcast]()
@@ -100,7 +100,7 @@
         - [IEEE 802.11 Frame Addressing]()
         - [WiMax]()
 
-    - **Chapter 8: Network Security**
+    - [**Chapter 8: Network Security**](#chapter-8)
         - [Explain Asymmetric Cryptography](#B)
         - [Explain Symmetric Cryptography]()
         - [What is RSA?]()
@@ -252,6 +252,8 @@
 - <ins><strong>Ad Hoc Network:</strong></ins> An ad hoc network is a decentralized, temporary wireless network that connects devices directly without relying on central infrastructure like routers or access points.
 
 ### Theoretical Questions
+
+#### Chapter 4
 
 #### 4.1. IP Address Structure
 
@@ -514,6 +516,26 @@ VLSM optimizes space by subnetting again, applying smaller masks for smaller nee
     - 20 hosts (32 needed): 192.168.1.128/27 (Range: 128-159)
     - 10 hosts (16 needed): 192.168.1.160/28 (Range: 160-175)
 - **Result:** The remaining address space (`192.168.1.176 - 192.168.1.255`) is saved, improving efficiency.
+
+---
+
+#### Chapter 5
+
+#### 5.1. Routing Protocol Classification
+
+- <ins><strong>By Operation/Algorithm</strong></ins>
+    - **Distance Vector (Bellman-Ford algorithm):** Routers share their entire routing table with neighbors periodically. Examples: RIPv1, RIPv2, IGRP.
+    - **Link-State (Dijkstra’s SPF algorithm):** Routers build a complete map of the network topology, allowing faster convergence. Examples: OSPF, IS-IS.
+    - **Hybrid:** Combines features of both, such as using Hello packets for neighbor discovery and partial updates for efficiency. Example: EIGRP.
+    - **Path-Vector:** Used in large-scale inter-domain routing, focusing on path information to avoid loops. Example: BGP.
+
+- <ins><strong>By Autonomous System</strong></ins>
+    - **Interior Border Gateway Protocols (iBGP):** Used to route traffic within a single autonomous system or organization (e.g., RIP, EIGRP, OSPF).
+    - **Exterior Border Gateway Protocols (eBGP):** Used to route traffic between different autonomous systems, such as connecting to the internet (e.g., BGP).
+
+#### Chapter 7
+
+#### Chapter 8
 
 ### Mathematical Questions
 
