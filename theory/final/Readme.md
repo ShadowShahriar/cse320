@@ -72,9 +72,8 @@
         - [What is NAT? Why it is useful?](#411-what-is-nat-why-it-is-useful)
         - [Private Address Space](#412-private-address-space)
         - [Classful vs Classless Addressing](#413-classful-vs-classless-addressing)
-        - [VLSM vs FLSM]()
-        - [Example of VLSM and FLSM]()
-        - [Apply FLSM to a network address and make it efficient by applying VLSM]()
+        - [VLSM vs FLSM](#414-vslm-vs-flsm)
+        - [Example of VLSM and FLSM](#415-example-of-vlsm-and-flsm)
 
     - **Chapter 5: Routing Protocols**
         - [Routing Protocol Classification](#B)
@@ -472,6 +471,49 @@ According to ARIN and IPv4 Global, the following ranges are reserved:
 | **Bandwidth**       | Classful addressing requires more bandwidth. As a result, it becomes slower and more expensive as compared to classless addressing.                | It requires less bandwidth. Thus, fast and less expensive as compared to classful addressing.                     |
 | **CIDR**            | It does not support Classless Inter-Domain Routing (CIDR).                                                                                         | It supports Classless Inter-Domain Routing (CIDR).                                                                |
 | **Troubleshooting** | Troubleshooting and problem detection are easy than classless addressing because of the division of network, host and subnet parts in the address. | It is not as easy compared to classful addressing.                                                                |
+
+---
+
+#### 4.14. VSLM vs FLSM
+
+| Feature               | VLSM                                                                                                                                                                | FLSM                                                                                                                               |
+| :-------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------- |
+| Subnet Size           | VLSM creates subnets with different sizes, tailored to the specific needs of each subnet.                                                                           | FLSM creates all subnets with an equal number of hosts.                                                                            |
+| Subnet Mask           | VLSM uses different subnet masks for each subnet.                                                                                                                   | FLSM uses the same mask for all subnets.                                                                                           |
+| IP Address Efficiency | VLSM minimizes IP address waste, making it highly efficient.                                                                                                        | FLSM has significant wastage of IP addresses because every subnet is sized for the largest requirement.                            |
+| Routing Protocols     | VLSM requires classless routing protocols (like RIPv2, OSPF, EIGRP) that support CIDR.                                                                              | FLSM is often used with classful routing protocols.                                                                                |
+| Complexity            | VLSM is more complex but more flexible.                                                                                                                             | FLSM is simpler to plan and implement.                                                                                             |
+| Usage                 | Use VLSM when maximizing IP address space is crucial, or when subnets require vastly different numbers of hosts (e.g., one subnet needs 100 hosts, another needs 5) | Use FLSM when subnet sizes are intended to be identical, or in simpler, small networks where IP address scarcity is not a concern. |
+
+---
+
+#### 4.15. Example of VLSM and FLSM
+
+<ins><strong>Fixed Length Subnet Mask (FLSM) Example</strong></ins>
+
+In FLSM, every subnet is sized to match the largest required department, wasting addresses in smaller departments.
+
+- **Requirement:** `192.168.1.0/24` divided into 4 subnets for departments of 50, 40, 20, and 10 hosts.
+- **Method:** To fit 50 hosts, we need a block size of 64 (`2 ^ 6`). All 4 subnets will use a /26 mask (`255.255.255.192`)
+- **Result:**
+    - **Subnet 1**: `192.168.1.0/26` (Hosts: 50)
+    - **Subnet 2:** `192.168.1.64/26` (Hosts: 40)
+    - **Subnet 3:** `192.168.1.128/26` (Hosts: 20)
+    - **Subnet 4:** `192.168.1.192/26` (Hosts: 10)
+- **Waste:** Significant waste in **Subnets 3 and 4** (`64 - 2` usable addresses, but only `20/10` needed)
+
+<ins><strong>Variable Length Subnet Mask (VLSM) Example</strong></ins>
+
+VLSM optimizes space by subnetting again, applying smaller masks for smaller needs.
+
+- **Requirements:** 50, 40, 20, 10 hosts.
+- **Step 1:** Sort requirements (Largest first): 50, 40, 20, 10.
+- **Step 2:** Assign masks based on size:
+    - 50 hosts (64 needed): 192.168.1.0/26 (Range: 0-63)
+    - 40 hosts (64 needed): 192.168.1.64/26 (Range: 64-127)
+    - 20 hosts (32 needed): 192.168.1.128/27 (Range: 128-159)
+    - 10 hosts (16 needed): 192.168.1.160/28 (Range: 160-175)
+- **Result:** The remaining address space (`192.168.1.176 - 192.168.1.255`) is saved, improving efficiency.
 
 ### Mathematical Questions
 
