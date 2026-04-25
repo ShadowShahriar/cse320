@@ -688,3 +688,177 @@ VLSM optimizes space by subnetting again, applying smaller masks for smaller nee
 ---
 
 #### 9.3. RSA Algorithm
+
+> Encrypt and decrypt the message `networking` using the RSA algorithm and also find the **5 private keys** (`d1` to `d5`) and **5 public keys** (`e1` to `e5`). The encryption and decryption process will be applied based on the value of `e1` and `d1`.
+
+Let us,
+
+```
+p = 5
+q = 11
+n = p × q
+  = 5 × 11
+  = 55
+```
+
+Computing Euler Totient Function,
+
+```
+ϕ(n) = (p − 1)(q − 1)
+     = (5 − 1)(11 − 1)
+     = 4 × 10
+     = 40
+```
+
+- Determining 5 public keys `e` for conditions,
+
+    ```
+    1 < e < 40
+    gcd(e, 40) = 1
+    ```
+
+    Relative primes to `ϕ(n) = 40`:
+
+    ```
+    e1​ = 3
+    e2​ = 7
+    e3​ = 9
+    e4​ = 11
+    e5 ​= 13
+    ```
+
+    Therefore, set of public keys = `[3, 7, 9, 11, 13]`
+
+- Determining 5 private keys `d` for condition,
+
+    ```
+       e × d ≡ 1 (mod 40)
+    => e × d = 1 + 40k
+    ```
+
+    | e(n)      | k(n) | d = (1 + 40k) / e      | d(n)      |
+    | :-------- | :--- | :--------------------- | :-------- |
+    | `e1 = 3`  | 2    | (1 + 40(2)) / 3 = 27   | `d1 = 27` |
+    | `e2 = 7`  | 4    | (1 + 40(4)) / 7 = 23   | `d2 = 23` |
+    | `e3 = 9`  | 2    | (1 + 40(2)) / 9 = 9    | `d3 = 9`  |
+    | `e4 = 11` | 11   | (1 + 40(11)) / 11 = 11 | `d4 = 11` |
+    | `e5 = 13` | 3    | (1 + 40(3)) / 13 = 37  | `d5 = 37` |
+
+- Convert "networking" into ASCII,
+
+    | Letter | Number |
+    | :----- | :----- |
+    | n      | 14     |
+    | e      | 5      |
+    | t      | 20     |
+    | w      | 23     |
+    | o      | 15     |
+    | r      | 18     |
+    | k      | 11     |
+    | i      | 9      |
+    | n      | 14     |
+    | g      | 7      |
+
+    ```
+    "networking" = [14, 5, 20, 23, 15, 18, 11, 9, 14, 7]
+    ```
+
+- Encrypting each character,
+
+    We know,
+
+    ```
+    C = (M ^ e) mod n
+    ```
+
+    Using e = e1, `C = (M ^ 3) mod 55`
+
+    ```
+    14 -> "n"
+
+    14 ^ 3 = 2744
+    2744 ÷ 55 = 49 remainder 49
+    C = 49
+    ```
+
+    ```
+    5 -> "e"
+
+    5 ^ 3 = 125
+    125 ÷ 55 = 2 remainder 15
+    C = 15
+    ```
+
+    ```
+    20 -> "t"
+
+    20 ^ 3 = 8000
+    8000 ÷ 55 = 145 remainder 25
+    C = 25
+    ```
+
+    ```
+    23 -> "w"
+
+    23 ^ 3 = 12167
+    12167 ÷ 55 = 221 remainder 12
+    C = 12
+    ```
+
+    ```
+    18 -> "r"
+
+    18 ^ 3 = 5832
+    5832 ÷ 55 = 106 remainder 2
+    C = 2
+    ```
+
+    ```
+    11 -> "k"
+
+    11 ^ 3 = 1331
+    1331 ÷ 55 = 24 remainder 12
+    C = 11
+    ```
+
+    ```
+    9 -> "i"
+
+    9 ^ 3 = 729
+    729 ÷ 55 = 13 remainder 14
+    C = 14
+    ```
+
+    ```
+    14 -> "n"
+
+    C = 49
+    ```
+
+    ```
+    7 -> "g"
+
+    7 ^ 3 = 343
+    343 ÷ 55 = 6 remainder 13
+    C = 13
+    ```
+
+    ```
+    Cipher Text = [49, 15, 25, 12, 20, 2, 11, 14, 49, 13]
+    ```
+
+- Decrypting each character,
+
+    We know,
+
+    ```
+    M = (C ^ d) mod n
+    ```
+
+    Using d = d1, `M = (C ^ 27) mod 55`
+
+    ```
+    Original Text = "networking"
+    ```
+
+---
