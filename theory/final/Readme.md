@@ -55,29 +55,96 @@
     - RTS and CTS
     - WiMax
     - Address Resolution Protocol
+    - Ad Hoc Network
 
 2. [**Theoretical Question**](#theoretical-questions)
-    - **Chapter 4**
-        - [TODO](#B)
+    - **Chapter 4: IP Addressing and Subnetting**
+        - [IP Address Structure](#B)
+        - [Why Subnetting is Necessary?]()
+        - [What is the slash notation in a subnet address?]()
+        - [Classless Subnetting using CIDR]()
+        - [How does a host get IP address within its network?]()
+        - [How does a network get IP address for itself?]()
+        - [Why DHCP is better than manual routing?]()
+        - [What is NAT? Why it is useful?]()
+        - [IP Address Classes]()
+        - [Private Address Space]()
+        - [Classful vs Classless Subnetting]()
+        - [VLSM vs FLSM]()
+        - [Example of VLSM and FLSM]()
+        - [Apply FLSM to a network address and make it efficient by applying VLSM]()
 
-    - **Chapter 5**
-        - [TODO](#B)
+    - **Chapter 5: Routing Protocols**
+        - [Routing Protocol Classification](#B)
+        - [Dijkstra's Link State Routing Algorithm]()
+        - [Distance Vector Algorithm]()
 
-    - **Chapter 7**
-        - [TODO](#B)
+    - **Chapter 7: Wireless and Mobile Networks**
+        - [Flooding: Pros and Cons](#B)
+        - [Flooding: Broadcast Storm]()
+        - [Flooding: Spanning Tree Broadcast]()
+        - [Forwarding vs Routing]()
+        - [Reverse Path Forwarding]()
+        - [Distance Vector Algorithm]()
+        - [Border Gateway Protocol with Example]()
+        - [BGP Messages]()
+        - [BGP Routes]()
+        - [Elements of a Wireless Network]()
+        - [Ad Hoc Mode]()
+        - [Wireless Link Characteristics]()
+        - [SNR vs BER]()
+        - [IEEE 802.11 Wireless LAN Mechanism]()
+        - [CSMA/CA and CSMA/CD]()
+        - [IEEE 802.11 MAC Protocol: CSMA/CA]()
+        - [IEEE 802.11 Frame Addressing]()
+        - [WiMax]()
 
-    - **Chapter 8**
-        - [TODO](#B)
+    - **Chapter 8: Network Security**
+        - [Explain Asymmetric Cryptography](#B)
+        - [Explain Symmetric Cryptography]()
+        - [What is RSA?]()
+        - [How does RSA encryption work?]()
+        - [How does RSA content is decrypted?]()
 
 3. **Mathematical Questions**
-    - [TODO](#B)
+    - [IP Addressing](#11-ip-addressing)
+    - [Variable Length Subnet Mask](#12-variable-length-subnet-mask)
+    - [RSA Algorithm](#13-rsa-algorithm)
 
 ### Full Forms
 
-| Abbreviation | Full Form                   |
-| :----------- | :-------------------------- |
-| IP           | Internet Protocol           |
-| NAT          | Network Address Translation |
+| Abbreviation | Full Form                                              |
+| :----------- | :----------------------------------------------------- |
+| **IP**       | Internet Protocol                                      |
+| **NAT**      | Network Address Translation                            |
+| **DHCP**     | Dynamic Host Configuration Protocol                    |
+| **CIDR**     | Classless Inter-Domain Routing                         |
+| **VSLM**     | Variable Length Subnet Mask                            |
+| **FSLM**     | Fixed Length Subnet Mask                               |
+| **RSA**      | Rivest-Shamir-Adleman                                  |
+| **RPF**      | Reverse Path Forwarding                                |
+| **ACK**      | Acknowledgement                                        |
+| **DVR**      | Distance Vector Routing                                |
+| **STP**      | Spanning Tree Protocol                                 |
+| **BGP**      | Border Gateway Protocol                                |
+| **eBGP**     | External BGP                                           |
+| **iBGP**     | Internal/Logical BGP                                   |
+| **AS**       | Autonomous System                                      |
+| **SNR**      | Signal to Noise Ratio                                  |
+| **BER**      | Bit Error Rate                                         |
+| **CDMA**     | Code Division Multiple Access                          |
+| **CSMA/CA**  | Carrier Sense Multiple Access with Collision Avoidance |
+| **CSMA/CD**  | Carrier Sense Multiple Access with Collision Detection |
+| **BSS**      | Basic Service Set                                      |
+| **AP**       | Access Point                                           |
+| **RTS**      | Request to Send                                        |
+| **CTS**      | Clear to Send                                          |
+| **WiMax**    | Worldwide Interoperability for Microwave Access        |
+| **ARP**      | Address Resolution Protocol                            |
+| **MANET**    | Mobile Ad Hoc Network                                  |
+| **WANET**    | Wireless Ad Hoc Network                                |
+| **FANET**    | Flying Ad Hoc Network                                  |
+| **VANET**    | Vehicular Ad hoc Network                               |
 
 ### Definitions
 
@@ -180,10 +247,16 @@
 
 - <ins><strong>Address Resolution Protocol:</strong></ins> ARP (Address Resolution Protocol) maps an IPv4 address to the corresponding MAC address on a local network so frames can be delivered to the correct device.
 
+- <ins><strong>Ad Hoc Network:</strong></ins> An ad hoc network is a decentralized, temporary wireless network that connects devices directly without relying on central infrastructure like routers or access points.
+
 ### Theoretical Questions
 
 #### 1.1. TODO
 
 ### Mathematical Questions
 
-#### 1.1. TODO
+#### 1.1. IP Addressing
+
+#### 1.2. Variable Length Subnet Mask
+
+#### 1.3. RSA Algorithm
