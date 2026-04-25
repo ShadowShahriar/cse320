@@ -107,8 +107,8 @@
         - [How does RSA encryption work?]()
         - [How does RSA content is decrypted?]()
 
-3. **Mathematical Questions**
-    - [IP Addressing](#91-ip-addressing)
+3. [**Mathematical Questions**](#mathematical-questions)
+    - [IP Addressing](#91-subnetting)
     - [Variable Length Subnet Mask](#92-variable-length-subnet-mask)
     - [RSA Algorithm](#93-rsa-algorithm)
 
