@@ -354,7 +354,7 @@ Here are the key Internetworking Principles established by Cerf and Kahn:
 
 #### 1.9. Reference Models: OSI and TCP/IP
 
-<p align="center"><img alt="Reference Models: OSI and TCP/IP" src="../assets/images/osi-tcp.webp"/><br><i>figure 1.9: Reference Models: OSI and TCP/IP</i></p>
+<p align="center"><img alt="Reference Models: OSI and TCP/IP" src="../../assets/images/osi-tcp.webp"/><br><i>figure 1.9: Reference Models: OSI and TCP/IP</i></p>
 
 | OSI Model                                                                                 | TCP/IP Model                                                                |
 | :---------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------- |
@@ -453,7 +453,7 @@ A peer-to-peer (**P2P**) model is a decentralized network architecture where ind
 
 A network socket is the software-defined, bidirectional endpoint of a communication link between two programs running on a network. **Sockets are essential for client-server communication, enabling processes to exchange data over protocols like TCP or UDP.**
 
-<p align="center"><img alt="Sockets" src="../assets/images/sockets.webp"/><br><i>figure 2.3: Sockets in Networking</i></p>
+<p align="center"><img alt="Sockets" src="../../assets/images/sockets.webp"/><br><i>figure 2.3: Sockets in Networking</i></p>
 
 <ins><strong>Types:</strong></ins>
 
@@ -613,7 +613,7 @@ Cookies are generally limited to **4KB in size**.
 
 #### 2.6C. Cookie Mechanism
 
-<p align="center"><img alt="Cookies" src="../assets/images/cookies.png"/><br><i>figure 2.6C: Cookie Mechanism</i></p>
+<p align="center"><img alt="Cookies" src="../../assets/images/cookies.png"/><br><i>figure 2.6C: Cookie Mechanism</i></p>
 
 1. The server sends a `Set-Cookie` header in the HTTP response.
 2. The browser saves the cookie.
@@ -635,7 +635,7 @@ A web cache proxy server is an intermediary server that stores copies of frequen
 
 When a user requests a website, the proxy checks if it has a stored copy. If yes, it serves the cached data instantly. If not, it fetches the data from the origin server, saves a copy for future use, and passes it to the user.
 
-<p align="center"><img alt="Proxy Servers" src="../assets/images/proxy.jpg"/><br><i>figure 2.7B: Web Caching with Proxy Servers</i></p>
+<p align="center"><img alt="Proxy Servers" src="../../assets/images/proxy.jpg"/><br><i>figure 2.7B: Web Caching with Proxy Servers</i></p>
 
 **Types of Proxy Caching:**
 
@@ -707,7 +707,7 @@ Average end-to-end delay:
 
 Head-of-Line (**HOL**) blocking is a networking performance bottleneck where the first packet (or request) in a queue stalls all subsequent packets, even if those later packets are destined for idle resources.
 
-<p align="center"><img alt="HOL Blocking in HTTP 1.1" src="../assets/images/hol-01.jpg"/><br><i>figure 2.9.1: HOL Blocking in HTTP 1.1</i></p>
+<p align="center"><img alt="HOL Blocking in HTTP 1.1" src="../../assets/images/hol-01.jpg"/><br><i>figure 2.9.1: HOL Blocking in HTTP 1.1</i></p>
 
 - **HTTP/2 multiplexing** enables sending multiple requests and responses in parallel over a single connection, allowing independent handling of resources.
 
@@ -715,7 +715,7 @@ Head-of-Line (**HOL**) blocking is a networking performance bottleneck where the
 
 - HTTP/2 Allows the client to tell the server which resources are more important, ensuring critical data is sent first even within a multiplexed connection.
 
-<p align="center"><img alt="Mitigating HOL Blocking in HTTP/2" src="../assets/images/hol-02.jpg"/><br><i>figure 2.9.2: Mitigating HOL Blocking in HTTP/2</i></p>
+<p align="center"><img alt="Mitigating HOL Blocking in HTTP/2" src="../../assets/images/hol-02.jpg"/><br><i>figure 2.9.2: Mitigating HOL Blocking in HTTP/2</i></p>
 
 - **Limitation:** Since **HTTP/2 runs over TCP**, if a single TCP packet is lost, all streams within that connection are stalled until the packet is retransmitted. This is particularly noticeable in high-latency or unstable networks.
 
@@ -725,7 +725,7 @@ Head-of-Line (**HOL**) blocking is a networking performance bottleneck where the
 
 Simple Mail Transfer Protocol (**SMTP**) is the industry-standard protocol for sending and relaying outgoing emails across networks, acting as the internet's digital post office.
 
-<p align="center"><img alt="SMTP Model" src="../assets/images/smtp.webp"/><br><i>figure 2.10: SMTP Model</i></p>
+<p align="center"><img alt="SMTP Model" src="../../assets/images/smtp.webp"/><br><i>figure 2.10: SMTP Model</i></p>
 
 <ins><strong>Working Principle:</strong></ins>
 
@@ -803,7 +803,7 @@ Domain Name System (**DNS**) is a hierarchical, distributed database that transl
 
 DNS is hierarchical primarily to enable scalability, distributed management, and efficiency for the internet's massive, growing infrastructure.
 
-<p align="center"><img alt="DNS" src="../assets/images/dns.jpg"/><br><i>figure 2.12: DNS Structure</i></p>
+<p align="center"><img alt="DNS" src="../../assets/images/dns.jpg"/><br><i>figure 2.12: DNS Structure</i></p>
 
 By using a tree-like structure (root, TLDs, authoritative servers), no single server needs to store all domain records, preventing bottlenecks and allowing decentralized administration of domain names.
 
@@ -833,7 +833,7 @@ Domain Name System (DNS). TLDs categorize websites by purpose (.com, .org, .edu)
 
 DNS records are instructions within a DNS zone file that map domain names to IP addresses or other resources.
 
-<p align="center"><img alt="DNS Record Format" src="../assets/images/dns-record.png"/><br><i>figure 2.15: DNS Record Format</i></p>
+<p align="center"><img alt="DNS Record Format" src="../../assets/images/dns-record.png"/><br><i>figure 2.15: DNS Record Format</i></p>
 
 <ins><strong>Key Components of a DNS Record:</strong></ins>
 
@@ -865,11 +865,11 @@ The File Transfer Protocol (**FTP**) is a standard communication protocol used f
 
 - Files can be transferred in **ASCII** (text) or **Binary mode** (executable files, images).
 
-<p align="center"><img alt="FTP moves files between local and remote file systems" src="../assets/images/ftp-01.jpg"/><br><i>figure 2.16.1: FTP moves files between local and remote file systems</i></p>
+<p align="center"><img alt="FTP moves files between local and remote file systems" src="../../assets/images/ftp-01.jpg"/><br><i>figure 2.16.1: FTP moves files between local and remote file systems</i></p>
 
 <ins><strong>Working Principle:</strong></ins>
 
-<p align="center"><img alt="FTP working principle" src="../assets/images/ftp-02.jpg"/><br><i>figure 2.16.2: FTP working principle</i></p>
+<p align="center"><img alt="FTP working principle" src="../../assets/images/ftp-02.jpg"/><br><i>figure 2.16.2: FTP working principle</i></p>
 
 - **Client-Server Model:** An FTP client (_e.g., FileZilla_) connects to an FTP server, requesting access via user credentials or anonymously.
 
@@ -916,7 +916,7 @@ The File Transfer Protocol (**FTP**) is a standard communication protocol used f
 
 IPv4 addresses use 32 bits and are written in dotted decimal notation.
 
-<p align="center"><img alt="IPv4 Addressing Format" src="../assets/images/ipv4-add-fm.png"/><br><i>figure 2.17: IPv4 Addressing Format</i></p>
+<p align="center"><img alt="IPv4 Addressing Format" src="../../assets/images/ipv4-add-fm.png"/><br><i>figure 2.17: IPv4 Addressing Format</i></p>
 
 ```
 Example: 192.168.1.1
@@ -993,7 +993,7 @@ The action of a Caesar cipher is to replace each plaintext letter with a differe
 
 A UDP segment consists of a minimal **8-byte header** followed by the application payload data.
 
-<p align="center"><img alt="UDP" src="../assets/images/udp.png"/><br><i>figure 3.2: UDP Segment Headers</i></p>
+<p align="center"><img alt="UDP" src="../../assets/images/udp.png"/><br><i>figure 3.2: UDP Segment Headers</i></p>
 
 <ins><strong>UDP Segment Header Structure:</strong></ins>
 
@@ -1011,7 +1011,7 @@ A UDP segment consists of a minimal **8-byte header** followed by the applicatio
 
 A TCP segment consists of a **20–60 byte header** followed by application data.
 
-<p align="center"><img alt="TCP" src="../assets/images/tcp.jpg"/><br><i>figure 3.3: TCP Segment Headers</i></p>
+<p align="center"><img alt="TCP" src="../../assets/images/tcp.jpg"/><br><i>figure 3.3: TCP Segment Headers</i></p>
 
 <ins><strong>TCP Segment Header Structure:</strong></ins>
 
@@ -1052,7 +1052,7 @@ A TCP segment consists of a **20–60 byte header** followed by application data
 
 An IPv4 packet consists of a **20-60 byte header** followed by a variable-length data payload.
 
-<p align="center"><img alt="IPv4" src="../assets/images/ipv4.png"/><br><i>figure 4.1: IPv4 Packet Structure</i></p>
+<p align="center"><img alt="IPv4" src="../../assets/images/ipv4.png"/><br><i>figure 4.1: IPv4 Packet Structure</i></p>
 
 - **Version (4 bits):** Indicates the IP version, set to 4 for IPv4.
 - **Internet Header Length (IHL) (4 bits):** Specifies the header size in 32-bit words; typically 5 (20 bytes).
@@ -1074,7 +1074,7 @@ An IPv4 packet consists of a **20-60 byte header** followed by a variable-length
 
 An IPv6 packet consists of a mandatory **40-byte (320-bit) fixed header**, optional extension headers, and the upper-layer payload (e.g., TCP/UDP).
 
-<p align="center"><img alt="IPv6" src="../assets/images/ipv6.png"/><br><i>figure 4.2: IPv6 Packet Structure</i></p>
+<p align="center"><img alt="IPv6" src="../../assets/images/ipv6.png"/><br><i>figure 4.2: IPv6 Packet Structure</i></p>
 
 - **Version (4 bits):** Set to 6 to indicate IPv6.
 - **Traffic Class (8 bits):** Used for QoS, similar to IPv4's Type of Service (ToS) field.
@@ -1110,13 +1110,13 @@ The IPv6 Flow Label is a 20-bit field in the IPv6 header (defined in **RFC 6437*
 
 It allows routers to efficiently classify and process traffic flows without examining higher-layer headers.
 
-<p align="center"><img alt="IPv6 Flow Label" src="../assets/images/ipv6-flow.png"/><br><i>figure 4.5: IPv6 Flow Label</i></p>
+<p align="center"><img alt="IPv6 Flow Label" src="../../assets/images/ipv6-flow.png"/><br><i>figure 4.5: IPv6 Flow Label</i></p>
 
 #### 4.6A. TCP Congestion Control: AIMD
 
 TCP Congestion Control using Additive Increase/Multiplicative Decrease (**AIMD**) is a feedback mechanism where the congestion window (_cwnd_) increases linearly by one Maximum Segment Size (**MSS**) per Round Trip Time (**RTT**) in the absence of congestion, and is reduced by half (0.5 × _cwnd_) upon detecting packet loss.
 
-<p align="center"><img alt="AIMD" src="../assets/images/aimd.png"/><br><i>figure 4.6: TCP Congestion Control using AIMD</i></p>
+<p align="center"><img alt="AIMD" src="../../assets/images/aimd.png"/><br><i>figure 4.6: TCP Congestion Control using AIMD</i></p>
 
 This "sawtooth" pattern allows TCP to probe for bandwidth, quickly scale back to avoid network collapse, and ensure fairness among multiple flows.
 
@@ -1133,7 +1133,7 @@ This "sawtooth" pattern allows TCP to probe for bandwidth, quickly scale back to
 
 TCP Slow Start is a foundational TCP congestion control algorithm that prevents network overload by starting data transmission with a small congestion window (_cwnd_) and increasing it exponentially for every received ACK.
 
-<p align="center"><img alt="TCP Slow Start" src="../assets/images/tcp-slow-start.png"/><br><i>figure 4.7: TCP Slow Start</i></p>
+<p align="center"><img alt="TCP Slow Start" src="../../assets/images/tcp-slow-start.png"/><br><i>figure 4.7: TCP Slow Start</i></p>
 
 ---
 

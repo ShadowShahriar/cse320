@@ -2,7 +2,7 @@
 
 ### Topic List
 
-> Thanks to **Amrin Jahan** for highlighting the important topics mentioned in **section 2**.
+> Thanks to **Amrin Jahan** for highlighting the important topics mentioned in **Section 2**.
 
 1. [**Definitions**](#definitions)
     - IP Address
@@ -108,9 +108,9 @@
         - [How does RSA content is decrypted?]()
 
 3. **Mathematical Questions**
-    - [IP Addressing](#11-ip-addressing)
-    - [Variable Length Subnet Mask](#12-variable-length-subnet-mask)
-    - [RSA Algorithm](#13-rsa-algorithm)
+    - [IP Addressing](#91-ip-addressing)
+    - [Variable Length Subnet Mask](#92-variable-length-subnet-mask)
+    - [RSA Algorithm](#93-rsa-algorithm)
 
 ### Full Forms
 
@@ -539,8 +539,152 @@ VLSM optimizes space by subnetting again, applying smaller masks for smaller nee
 
 ### Mathematical Questions
 
-#### 1.1. IP Addressing
+#### 9.1. IP Addressing
 
-#### 1.2. Variable Length Subnet Mask
+#### 9.2. Variable Length Subnet Mask
 
-#### 1.3. RSA Algorithm
+> Question provided by **Rafi Rahman Chowdhury** from **Section 9**.
+
+<p align="center"><img alt="Practice Problem on Subnets" src="problem.jpeg"/><br><i>figure 9.1: Practice Problem on Subnets</i></p>
+
+> An ISP is assigned an address block and consider that one of the addresses from the block is `150.50.0.0/16`. Subnet the network so that each subnet has at least `1000 hosts` (that IP loss should be as minimum as possible)
+
+- **a. How many subnets?**
+
+    <ins><strong>Ans.:</strong></ins>
+
+    Given parent block: `150.50.0.0/16`
+
+    ```
+    Network prefix = 16 bits
+    ∴ Host Bits    = 32 - 16 = 16 bits
+
+    ∴ Total IPs in the block = 2 ^ 16 = 65536 addresses
+    ```
+
+    Since each subnet must support at least 1000 hosts, and IP loss should be minimum, we need the smallest subnet size whose usable **hosts ≥ 1000**.
+
+    ```
+    Usable hosts = (2 ^ h) − 2
+                => (2 ^ h) − 2 ≥ 1000
+
+    Solving h = 10
+    ```
+
+    Original network has **16 fixed bits**. Now each subnet must leave **10 host bits**. subnet prefix becomes: `32 − 10 = 22`
+
+    Thus each subnet is = **/22**
+
+    ```
+    Originally prefix    = /16
+    New prefix           = /22
+    Borrowed subnet bits = 22 - 16 = 6
+
+    ∴ Number of subnets  = 2 ^ 6 = 64
+    ```
+
+    There are **64 subnets**.
+
+- **b. First and last host address of the 50th subnet?**
+
+    <ins><strong>Ans.:</strong></ins>
+
+    Since each subnet is = **/22**
+
+    Subnet mask:
+
+    ```
+    11111111.11111111.11111100.00000000
+    = 255.255.252.0
+    ```
+
+    Now,
+
+    ```
+    Each /22 subnet has = (2 ^ 32) - (2 ^ 22) = 1024 address
+    Usable hosts = 1024 - 2 = 1022
+    ```
+
+    Since mask is `255.255.252.0`, block size in the **3rd octet** is:
+
+    ```
+    256 - 252 = 4
+    ```
+
+    So subnets increment by 4 in the **3rd octet**.
+
+    General formula: `3rd octet = 4(n − 1)`
+
+    For 50th subnet:
+
+    ```
+    4(50 - 1) = 196
+    ```
+
+    So, 50th subnet network = `150.50.196.0/22`
+
+    A **/22** covers **4** values in third octet: `196`, `197`, `198`, `199`
+
+    Thus subnet range:
+    - Network = `150.50.196.0`
+    - Broadcast = `150.50.199.255`
+
+    Therefore:
+    - First usable host = `150.50.196.1`
+    - Last usable host = `150.50.199.254`
+
+- **c. 500th host address of the 25th subnet?**
+
+    <ins><strong>Ans.:</strong></ins>
+
+    General formula: `3rd octet = 4(n − 1)`
+
+    For 25th subnet:
+
+    ```
+    4(25 - 1) = 96
+    ```
+
+    So, 25th subnet network = `150.50.96.0/22`
+
+    First valid host = `150.50.96.1`
+
+    In the last two octets, each full fourth octet cycle = 256 addresses. So,
+
+    ```
+    500 - 256 = 244
+    ```
+
+    We increase 1 in the 3rd octet (from 96 to 97), then adding 244 to it gives the address to the 500th host. However, `150.50.97.0` is an invalid host. So, we need to increase the host bit 1 more time,
+
+    ```
+    500th host = 150.50.97.245
+    ```
+
+- **d. Unnecessary host address capacity in each subnet?**
+
+    <ins><strong>Ans.:</strong></ins> From questions **a** and **b**, we established that, Each subnet contains **1022 usable hosts**. But requirement is only **1000 hosts**.
+
+    Unused usable host capacity: `1022 − 1000 = 22`
+
+    ∴ There are 22 extra usable host addresses per subnet.
+
+- **e. Total host address losses for the entire block due to subnetting? (Network/Broadcast for all subnets)**
+
+    <ins><strong>Ans.:</strong></ins>
+
+    Every subnet loses:
+    - 1 Network address
+    - 1 Broadcast address
+
+    ```
+    Loss per subnet = 2
+    Total subnets   = 64
+    ∴ Total loss    = 64 * 2 = 128
+    ```
+
+    Total host address losses due to subnetting = `128`
+
+---
+
+#### 9.3. RSA Algorithm
