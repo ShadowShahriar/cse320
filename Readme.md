@@ -12,7 +12,7 @@ Course Credit : 3 (Theory), 1.5 (Lab)
 
 Course offered by,
 
-[**Dr. Khandoker Nadim Parvez**](https://www.bubt.edu.bd/department/27/faculty/profile/821)<br>Associate Professor<br>Department of Computer Science and Engineering<br>**nadimparvez@gmail.com**<br>+880 173 2345 087<br>No counseling hours mentioned
+[**Dr. Khandoker Nadim Parvez**](https://www.bubt.edu.bd/department/27/faculty/profile/821)<br>Associate Professor<br>Department of Computer Science and Engineering<br>**nadimparvez@gmail.com**<br>+880 173 2345 087<br>B1/503<br>11:30 AM to 5:00 PM
 
 ## Course Materials
 
@@ -28,11 +28,17 @@ Course offered by,
 
 ## Theory Quick Notes
 
-- [**Mid Term Examination**](https://shadowshahriar.github.io/cse320/theory/#mid-term-examination)
-    - [Topic List](https://shadowshahriar.github.io/cse320/theory/#topic-list)
-    - [Full Forms](https://shadowshahriar.github.io/cse320/theory/#full-forms)
-    - [Definitions](https://shadowshahriar.github.io/cse320/theory/#definitions)
-    - [Theoretical Questions](https://shadowshahriar.github.io/cse320/theory/#theoretical-questions)
+- [**Mid Term Examination**](https://shadowshahriar.github.io/cse320/theory/mid/#mid-term-examination)
+    - [Topic List](https://shadowshahriar.github.io/cse320/theory/mid/#topic-list)
+    - [Full Forms](https://shadowshahriar.github.io/cse320/theory/mid/#full-forms)
+    - [Definitions](https://shadowshahriar.github.io/cse320/theory/mid/#definitions)
+    - [Theoretical Questions](https://shadowshahriar.github.io/cse320/theory/mid/#theoretical-questions)
+
+- [**Final Term Examination**](https://shadowshahriar.github.io/cse320/theory/final/#final-term-examination)
+    - [Topic List](https://shadowshahriar.github.io/cse320/theory/final/#topic-list)
+    - [Full Forms](https://shadowshahriar.github.io/cse320/theory/final/#full-forms)
+    - [Definitions](https://shadowshahriar.github.io/cse320/theory/final/#definitions)
+    - [Theoretical Questions](https://shadowshahriar.github.io/cse320/theory/final/#theoretical-questions)
 
 ## Class Notes
 
