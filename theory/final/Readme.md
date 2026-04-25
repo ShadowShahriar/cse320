@@ -81,7 +81,7 @@
         - [Distance Vector Algorithm]()
 
     - [**Chapter 7: Wireless and Mobile Networks**](#chapter-7)
-        - [Flooding: Pros and Cons](#B)
+        - [Flooding: Pros and Cons]()
         - [Flooding: Broadcast Storm]()
         - [Flooding: Spanning Tree Broadcast]()
         - [Forwarding vs Routing]()
@@ -101,7 +101,7 @@
         - [WiMax]()
 
     - [**Chapter 8: Network Security**](#chapter-8)
-        - [Explain Asymmetric Cryptography](#B)
+        - [Explain Asymmetric Cryptography]()
         - [Explain Symmetric Cryptography]()
         - [What is RSA?]()
         - [How does RSA encryption work?]()
@@ -539,7 +539,51 @@ VLSM optimizes space by subnetting again, applying smaller masks for smaller nee
 
 ### Mathematical Questions
 
-#### 9.1. IP Addressing
+#### 9.1. Subnetting
+
+Design the classless subnetting (VLSM-Variable Length Subnet Mask) in order to create a network with the host requirements: IP Address: `192.168.100.0/24`
+
+- **Subnet A** (No. of hosts = 32)
+- **Subnet B** (No. of hosts = 25)
+- **Subnet C** (No. of hosts = 120)
+- **Subnet D** (No. of hosts = 120)
+- **Subnet E** (No. of hosts = 12)
+
+Answer the following questions for each subnet:
+
+- Finds subnet id.
+- Subnet Mask.
+- 1st and last valid host
+- Broadcast address
+- Find the total no of used ip addresses in this VLSM.
+- Find the total no of waste of ip addresses for the host.
+- Find the total no of unused ip addresses in this VLSM.
+
+<ins><strong>Ans.:</strong></ins>
+
+> Since the required VLSM allocation needs **368 addresses**, the given block `192.168.100.0/24` (256 addresses) is insufficient. Therefore minimum feasible parent block is `192.168.100.0/23`.
+
+| Subnet | Hosts&nbsp;Req. | CIDR    | Subnet&nbsp;ID  | Mask            | 1st&nbsp;Host   | Last&nbsp;Host  | Broadcast       |
+| :----- | :-------------- | :------ | :-------------- | :-------------- | :-------------- | :-------------- | :-------------- |
+| C      | 120             | **/25** | 192.168.100.0   | 255.255.255.128 | 192.168.100.1   | 192.168.100.126 | 192.168.100.127 |
+| D      | 120             | **/25** | 192.168.100.128 | 255.255.255.128 | 192.168.100.129 | 192.168.100.254 | 192.168.100.255 |
+| A      | 32              | **/26** | 192.168.101.0   | 255.255.255.192 | 192.168.101.1   | 192.168.101.62  | 192.168.101.63  |
+| B      | 25              | **/27** | 192.168.101.64  | 255.255.255.224 | 192.168.101.65  | 192.168.101.94  | 192.168.101.95  |
+| E      | 12              | **/28** | 192.168.101.96  | 255.255.255.240 | 192.168.101.97  | 192.168.101.110 | 192.168.101.111 |
+
+Allocated block sizes:
+
+```
+128 + 128 + 64 + 32 + 16 = 368
+```
+
+Since parent **/23** has **512 addresses**, unused addresses:
+
+```
+512 − 368 = 144
+```
+
+---
 
 #### 9.2. Variable Length Subnet Mask
 
